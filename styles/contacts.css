@@ -1,0 +1,22 @@
+.contacts_container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-color: beige;
+  transition: 1s top, bottom;
+  z-index: 99;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_container {
+  height: 10vh;
+  width: 100%;
+}
+
+b:hover{
+  cursor: pointer;
+}
