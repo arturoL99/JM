@@ -8,6 +8,6 @@ module.exports = nextConfig
 
 module.exports = {
   images: {
-    domains: ["www.seekpng.com"],
+    domains: ["www.seekpng.com", "images.ctfassets.net"],
   },
 }

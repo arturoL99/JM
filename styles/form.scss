@@ -1,0 +1,111 @@
+@import "./colors";
+
+form {
+  .field {
+    width: 90%;
+    position: relative;
+    border-bottom: 2px solid transparent;
+    margin: 1rem auto;
+    background-color: #05080f87;
+    label {
+      color: $light;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 10px;
+      top: 90%;
+      transform: translateY(-2rem);
+      transform-origin: 0%;
+      transition: 500ms transform;
+    }
+
+    input {
+      outline: none;
+      border: none;
+      overflow: hidden;
+      margin: 0;
+      height: 2.5rem;
+      width: 100%;
+      padding: 0 0.25rem 0;
+      background: transparent;
+      color: $light;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+
+  .field::after {
+    content: "";
+    position: relative;
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: $light;
+    transform: scaleX(0);
+    transform-origin: 0%;
+    transition: 500ms transform ease;
+    top: 2px;
+  }
+
+  .field:focus-within {
+    border-color: transparent;
+  }
+
+  .field:focus-within::after {
+    transform: scaleX(1);
+  }
+
+  .field:focus-within label {
+    transform: scale(0.8) translateY(-5rem);
+  }
+
+  textarea {
+    outline: none;
+    border: none;
+    margin: 0;
+    min-height: 10vh;
+    max-height: 10vh;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0 0.25rem 0;
+    background: #05080f87;
+    padding: 5px;
+    font-size: 1.2rem;
+  }
+
+  .form_btn {
+    position: relative;
+    padding: 20px 10px;
+    width: 90%;
+    height: 5vh;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    color: $light;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 500ms ease-in-out;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 1%;
+      transform: translate(0%, -50%);
+      transition: 500ms ease-in-out;
+    }
+  }
+
+  .form_btn:hover {
+    border: 2px solid $light;
+    span {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+::placeholder {
+  color: $light;
+  opacity: 0.8;
+}

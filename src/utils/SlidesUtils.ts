@@ -1,19 +1,19 @@
 import { Dispatch, SetStateAction } from "react";
 
 export const goUp = (
-  main: string,
-  setMain: Dispatch<SetStateAction<string>>,
-  setProjects: Dispatch<SetStateAction<string>>,
-  setInfo: Dispatch<SetStateAction<string>>
+  mainClass: string,
+  setMainClass: Dispatch<SetStateAction<string>>,
+  setProjectsClass: Dispatch<SetStateAction<string>>,
+  setContactsClass: Dispatch<SetStateAction<string>>
 ) => {
-  switch (main) {
+  switch (mainClass) {
     case "active":
-      setMain("down");
-      setProjects("active");
+      setMainClass("down");
+      setProjectsClass("active");
       break;
     case "up":
-      setInfo("down");
-      setMain("active");
+      setContactsClass("down");
+      setMainClass("active");
       break;
     default:
       break;
@@ -21,19 +21,19 @@ export const goUp = (
 };
 
 export const goDown = (
-  main: string,
-  setMain: Dispatch<SetStateAction<string>>,
-  setProjects: Dispatch<SetStateAction<string>>,
-  setInfo: Dispatch<SetStateAction<string>>
+  mainClass: string,
+  setMainClass: Dispatch<SetStateAction<string>>,
+  setProjectsClass: Dispatch<SetStateAction<string>>,
+  setContactsClass: Dispatch<SetStateAction<string>>
 ) => {
-  switch (main) {
+  switch (mainClass) {
     case "active":
-      setMain("up");
-      setInfo("active");
+      setMainClass("up");
+      setContactsClass("active");
       break;
     case "down":
-      setMain("active");
-      setProjects("up");
+      setMainClass("active");
+      setProjectsClass("up");
       break;
     default:
       break;
