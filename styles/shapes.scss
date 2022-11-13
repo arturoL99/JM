@@ -2,65 +2,58 @@
   aspect-ratio: 1.618;
   width: 90vmin;
   position: absolute;
-}
 
-#wrapper > .shape {
-  height: 30%;
-  width: 30%;
-  background-color: rgb(255, 255, 255 / 5%);
-  position: absolute;
-  transition: left, top, height, width, border-radius;
-  transition-duration: 750ms;
-  transition-timing-function: ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: black;
-  background-position: center;
-  background-size: cover;
+  .shape {
+    height: 30%;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    transition: left, top, height, width, border-radius;
+    transition-duration: 750ms;
+    transition-timing-function: ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 #wrapper > .shape:nth-child(1) {
-  /* background-color: rgb(38, 70, 83); */
   background-image: url("../src/images/vieri.webp");
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(2) {
-  /* background-color: rgb(42, 157, 143); */
   background-image: url("../src/images/keke.webp");
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(3) {
-  /* background-color: rgb(233, 196, 106); */
   background-image: url("../src/images/arturo.webp");
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(4) {
-  /* background-color: rgb(233, 162, 97); */
   background-image: url("../src/images/massimo.webp");
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(5) {
-  /* background-color: rgb(231, 111, 81); */
   background-image: url("../src/images/marie2.webp");
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(6) {
-  /* background-color: rgb(170, 99, 115); */
   background-image: url("../src/images/lincho.webp");
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(7) {
-  /* background-color: rgb(140, 28, 19); */
   background-image: url("../src/images/marie.webp");
   z-index: 2;
 }

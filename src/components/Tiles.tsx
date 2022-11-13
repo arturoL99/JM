@@ -3,7 +3,6 @@ import { FC, useEffect, useState } from "react";
 
 const Test:FC = () => {
   const [wrapper, setWrapper] = useState<HTMLElement | null>();
-  console.log(wrapper);
   useEffect(() => {
     setWrapper(document.getElementById("tiles"));
   });
