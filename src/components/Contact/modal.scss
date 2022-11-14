@@ -6,7 +6,6 @@
   height: 70vh;
   width: 80vw;
   background-color: $dark;
-  transition: 1.5s;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -44,7 +43,6 @@
     height: fit-content;
     width: 100%;
     padding: 10px 0;
-    transition: 500ms;
 
     span{
       padding: 0 5px ;
@@ -89,15 +87,6 @@
   h2 {
     color: $light;
     margin: 1rem 5px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
   }
 
   .form_container {

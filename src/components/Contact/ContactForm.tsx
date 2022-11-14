@@ -25,7 +25,6 @@ const ContactForm: FC<Props> = ({ onSubmit }) => {
       <div className="field">
         <textarea name="message" placeholder="Message" />
       </div>
-
       <button className="form_btn">
         <span>Send Message</span>
       </button>
