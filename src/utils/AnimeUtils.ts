@@ -1,102 +1,84 @@
 import anime from "animejs";
 
-export const hoverArrow = (
-  hover: boolean,
-  hide: boolean,
-  top: number | undefined,
-  bottom: number | undefined,
-  arrowClass: string
-) => {
+export const hoverArrow = (arrowClass: string, hover: boolean) => {
+  const opacity = hover ? [0, 1] : [1, 0];
+  const scaleIcon = hover ? [0.5, 1] : [1, 0.5];
+  const scaleArrow = hover ? [1, 1.3] : [1.3, 1];
+  const position = hover ? [-50, 40] : [40, -50];
   switch (arrowClass) {
     case "arrow_up":
-      if (hover && !hide) {
-        anime({
+      const animation = {
+        icon: anime({
           targets: `#${arrowClass} .icon_container`,
-          opacity: 1,
-          top: top,
-          scale: 1,
-          duration: 500,
-          easing: "easeInOutExpo",
+          opacity: opacity,
+          top: position,
+          scale: scaleIcon,
+          duration: 1000,
           elasticity: 400,
-        });
-        anime({
-          targets: `.${arrowClass}`,
-          scale: 1.2,
+        }),
+        arrow: anime({
+          targets: `#${arrowClass} .${arrowClass}`,
+          scale: scaleArrow,
           duration: 500,
           easing: "easeInOutExpo",
-        });
-      } else {
-        anime({
-          targets: `#${arrowClass}  .icon_container`,
-          top: 0,
-          opacity: 0,
-          scale: 0.8,
-          duration: 500,
-          easing: "easeInOutQuad",
-          elasticity: 400,
-        });
-        anime({
-          targets: `.${arrowClass}`,
-          scale: 1,
-          duration: 500,
-          easing: "easeInOutExpo",
-        });
-      }
+        }),
+      };
+      animation.arrow.play();
+      animation.icon.play();
       break;
-
     case "arrow_down":
-      if (hover && !hide) {
-        anime({
+      const animationDown = {
+        icon: anime({
           targets: `#${arrowClass} .icon_container`,
-          opacity: 1,
-          bottom: bottom,
-          scale: 1,
-          duration: 200,
-          easing: "easeInOutExpo",
+          opacity: opacity,
+          bottom: position,
+          scale: scaleIcon,
+          duration: 1000,
           elasticity: 500,
-        });
-        anime({
-          targets: `.${arrowClass}`,
-          scale: 1.2,
+        }),
+        arrow: anime({
+          targets: `#${arrowClass} .${arrowClass}`,
+          scale: scaleArrow,
+          rotate: [180, 180],
           duration: 500,
-          easing: "easeInOutExpo",
-        });
-      } else {
-        anime({
-          targets: `#${arrowClass} .icon_container`,
-          bottom: 0,
-          opacity: 0,
-          scale: 0.8,
-          duration: 500,
-          easing: "easeInOutQuad",
-          elasticity: 400,
-        });
-        anime({
-          targets: `.${arrowClass}`,
-          scale: 1,
-          rotateX: 180,
-          duration: 500,
-          easing: "easeInOutExpo",
-        });
-      }
+          elasticity: 500,
+        }),
+      };
+      animationDown.arrow.play();
+      animationDown.icon.play();
       break;
   }
 };
 
-export const hideArrow = (hide: boolean, arrowClass: string) => {
-  if (hide) {
-    anime({
-      targets: `#${arrowClass}`,
-      opacity:0,
-      duration: 200,
-      easing: "easeInOutExpo",
-    });
-  } else{
-    anime({
-        targets: `#${arrowClass}`,
-        opacity:1,
-        duration: 200,
-        easing: "easeInOutExpo",
-      });
+export const aniTest = (
+  open: boolean,
+  scaleStart: number,
+  scaleEnd: number
+) => {
+  let start: number;
+  let end: number;
+  if (open) {
+    start = scaleStart;
+    end = scaleEnd;
+  } else {
+    start = scaleEnd;
+    end = scaleStart;
   }
+  return anime({
+    targets: `.test_ani`,
+    opacity: 1,
+    scale: [start, end],
+    duration: 2000,
+    elasticity: 400,
+  });
 };
+
+// export const revAniTest = () => {
+//   return anime({
+//     targets: `.test_ani`,
+//     opacity: 1,
+//     scale: [1.3, 1],
+//     duration: 2000,
+//     elasticity: 400,
+//   });
+// };

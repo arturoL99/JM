@@ -1,13 +1,15 @@
-// #test{
-//   form{
-//     width: 80vw;
-//     height: 70vh;
-//     background-color: rgb(81, 79, 79);
-//     display: flex;
-//   }
+.test_ani{
+    width: 50vw;
+    height: 50vh;
+    background-color: beige;
+}
 
-//   .form_column{
-//     width: 50%;
-//   }
-// }
-  
+#test{
+    height: 100vh;
+    width: 100vw;
+
+    button{
+        position: fixed;
+        bottom: 0;
+    }
+}

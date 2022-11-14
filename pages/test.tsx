@@ -1,34 +1,21 @@
 import ContactForm from "../src/components/Contact/ContactForm";
 import Player from "../src/components/Player";
+import animation from "animejs";
+import { aniTest } from "../src/utils/AnimeUtils";
+import { useEffect, useState } from "react";
 
 export default function Test() {
+  const [open, setOpen] = useState(true)
+  const reverseAni = (open:boolean) => {
+    aniTest(open, 1, 2).play()
+    setOpen(!open);
+  }
   return (
     <div id="test">
-      <form onSubmit={() => console.log("onSubmit")}>
-        <div className="form_column">
-          <div className="field">
-            <input type="text" name="name" placeholder=" " required />
-            <label htmlFor="name">First Name</label>
-          </div>
-          <div className="field">
-            <input type="text" name="lastName" placeholder=" " required />
-            <label htmlFor="name">Last Name</label>
-          </div>
-          <div className="field">
-            <input type="email" name="mail" placeholder=" " required />
-            <label htmlFor="mail">Email</label>
-          </div>
-        </div>
-        <div className="form_column">
-          <div className="field">
-            <textarea name="message" placeholder="Message" />
-          </div>
+      <div className="test_ani">
 
-          <button className="form_btn">
-            <span>Send Message</span>
-          </button>
-        </div>
-      </form>
+      </div>
+      <button onClick={() => reverseAni(open)}>DIOCANE</button>
     </div>
   );
 }

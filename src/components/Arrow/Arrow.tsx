@@ -2,7 +2,7 @@ import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import arrow from "../../images/icons8-freccia.webp";
 import homeIcon from "../../images/icons8-homepage.webp";
-import { hideArrow, hoverArrow } from "../../utils/AnimeUtils";
+import { hoverArrow } from "../../utils/AnimeUtils";
 
 type Props = {
   icon: StaticImageData;
@@ -33,18 +33,19 @@ const Arrow: FC<Props> = ({
   const [hover, setHover] = useState(false);
 
   useEffect(() => {
-    hoverArrow(hover, hide, 40, 40, arrowClass);
+    hoverArrow(arrowClass, hover);
   }, [hover]);
 
-  useEffect(() => {
-    hideArrow(hide, arrowClass);
-  }, [hide]);
   return (
     <div
-      className="arrow_container"
+      className={hide ? "hide" : "arrow_container"}
       id={`${arrowClass}`}
       onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      onMouseLeave={() => {
+        setTimeout(() => {
+          setHover(false);
+        }, 1000);
+      }}
     >
       <Image
         src={arrow}
@@ -57,7 +58,12 @@ const Arrow: FC<Props> = ({
         }
         loading="lazy"
       />
-      <div className={hide ? `icon_container icon_hide` : `icon_container`}>
+      <div
+        className={`icon_container`}
+        onClick={() =>
+          direction(mainClass, setMainClass, setProjectsClass, setContactsClass)
+        }
+      >
         {mainClass === "active" ? (
           <Image src={icon} alt="icon" width={30} height={30} />
         ) : (
