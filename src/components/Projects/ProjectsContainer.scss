@@ -1,4 +1,4 @@
-@import "./colors";
+@import "../../../styles/colors";
 
 .img_container {
   width: 100%;
@@ -16,13 +16,13 @@
 
 .imgCard {
   position: relative;
-  height: 60vh;
+  height: fit-content;
   width: auto;
-  border-radius: 10px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   margin: 0 10px;
+  border: 3px solid transparent;
 
   &_text {
     width: 100%;
@@ -38,7 +38,7 @@
       rgba(255, 255, 255, 0.2637429972) 82%
     );
     opacity: 1;
-    transition: 1s opacity ease-in-out;
+    transition: 500ms opacity ease-in-out;
     h3 {
       margin: 0;
       font-size: 40px;
@@ -51,6 +51,10 @@
   .active{
     opacity: 0;
   }
+}
+
+.imgCard:active{
+  border: 3px solid $dark;
 }
 
 ::-webkit-scrollbar{

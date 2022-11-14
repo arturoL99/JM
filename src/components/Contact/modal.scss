@@ -1,11 +1,11 @@
-@import "./colors";
+@import "../../../styles/colors";
 
 .modal {
   position: absolute;
-  height: fit-content;
-  width: 10vw;
+  min-height: fit-content;
+  height: 70vh;
+  width: 80vw;
   background-color: $dark;
-  top: 200%;
   transition: 1.5s;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,40 @@
   }
 
   &_title{
-    width: 90%;
+    position: relative;
+    right: 45%;
+    transform: translate(50%, 0);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &_email{
+    color: $light;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: fit-content;
+    width: 100%;
+    padding: 10px 0;
+    transition: 500ms;
+
+    span{
+      padding: 0 5px ;
+    }
+  }
+
+  &_email:hover{
+    color: $dark;
+    background-color: $light;
+
+    .email_icon{
+      opacity: 1;
+    }
   }
 
   &_info {
@@ -40,8 +73,8 @@
     button{
       font-size: 12px;
       color: $red;
-      font-weight: bold;
-      transition: 500ms;
+      font-weight: 600;
+      transition: 500ms transform;
       background: none;
       border: none;
       padding: 0;
@@ -55,12 +88,12 @@
 
   h2 {
     color: $light;
-    margin: 1rem 0;
+    margin: 1rem 5px;
   }
 
   form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -76,11 +109,12 @@
   }
 }
 
-.open {
-  height: fit-content;
-  min-height: 50vh;
-  max-height: 85vh;
-  width: 35vw;
-  top: 50%;
-  transform: translate(0%, -50%);
+.email_icon{
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 10px;
+  padding: 3px 0;
+  opacity: 0;
+  transition: 500ms;
 }

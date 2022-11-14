@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
-import { ShapeCombinations } from "../types/ShapeCombinations";
-import { possibleCombinations, uniqueRand } from "../utils/ShapesUtils";
-import keke from "../images/keke.webp";
-import marie from "../images/marie.webp";
-import marie2 from "../images/marie2.webp";
-import vieri from "../images/vieri.webp";
-import massimo from "../images/massimo.webp";
-import lincho from "../images/lincho.webp";
-import omar from "../images/omar.webp";
+import { ShapeCombinations } from "../../types/ShapeCombinations";
+import { possibleCombinations, uniqueRand } from "../../utils/ShapesUtils";
 
 const Shapes = () => {
   const [combinations, setCombinations] = useState<ShapeCombinations>(

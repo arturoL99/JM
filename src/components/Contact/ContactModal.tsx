@@ -2,14 +2,17 @@ import { Dispatch, FC, SetStateAction } from "react";
 import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
 import ContactForm from "./ContactForm";
+import Image from "next/image";
+import mailIcon from "../../images/icons8-gmail.svg";
 
 type Props = {
-  open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
+  email: string;
 };
-const ContactModal: FC<Props> = ({ open, setOpen }) => {
+const ContactModal: FC<Props> = ({ setOpen, email }) => {
   const sendEmail = (e: any) => {
     e.preventDefault();
+    setOpen(false);
     emailjs
       .sendForm(
         `${process.env.NEXT_PUBLIC_MAIL_SERVICE_ID}`,
@@ -46,13 +49,23 @@ const ContactModal: FC<Props> = ({ open, setOpen }) => {
   };
 
   return (
-    <section className={open ? "modal open" : "modal"}>
+    <section className={"modal"}>
       <div className="modal_title">
-        <h2>
-          elias@mail.com
-          <br />
-          Or leave a message here:
-        </h2>
+        <a href={`mailto:${email}`} className="modal_email">
+          <span>{email}</span>
+          <div className="email_icon">
+            
+            <Image
+              src={mailIcon}
+              alt="mail"
+              width={30}
+              height={30}
+              loading="lazy"
+            />
+          </div>
+        </a>
+
+        <h2>Or leave a message here:</h2>
       </div>
 
       <div className="form_container">

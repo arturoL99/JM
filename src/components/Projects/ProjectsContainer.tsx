@@ -1,19 +1,19 @@
 import { FC } from "react";
 import ProjectCard from "./ProjectCard";
-import { Project } from "../types/Project";
+import { Project } from "../../types/Project";
 
 type Props = {
   projects: Project[];
 };
 
-const ImagesContainer: FC<Props> = ({ projects }) => {
+const ProjectsContainer: FC<Props> = ({ projects }) => {
   return (
     <div className="img_container">
       {projects.map((project) => {
-        return <ProjectCard project={project} />;
+        return <ProjectCard project={project} key={project.name} />;
       })}
     </div>
   );
 };
 
-export default ImagesContainer;
+export default ProjectsContainer;

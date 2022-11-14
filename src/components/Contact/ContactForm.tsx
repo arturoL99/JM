@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 
 type Props = {
   onSubmit: (e: any) => void;
@@ -6,28 +6,31 @@ type Props = {
 
 const ContactForm: FC<Props> = ({ onSubmit }) => {
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={() => console.log("onSubmit")}>
+    <div className="form_column">
       <div className="field">
-        <input type="text" name="name" required />
+        <input type="text" name="name" placeholder=" " required />
         <label htmlFor="name">First Name</label>
       </div>
       <div className="field">
-        <input type="text" name="lastName" required />
+        <input type="text" name="lastName" placeholder=" " required />
         <label htmlFor="name">Last Name</label>
       </div>
       <div className="field">
-        <input type="email" name="mail" required />
+        <input type="email" name="mail" placeholder=" " required />
         <label htmlFor="mail">Email</label>
       </div>
+    </div>
+    <div className="form_column">
       <div className="field">
         <textarea name="message" placeholder="Message" />
-        {/* <label htmlFor="message">Message</label> */}
       </div>
 
       <button className="form_btn">
         <span>Send Message</span>
       </button>
-    </form>
+    </div>
+  </form>
   );
 };
 
