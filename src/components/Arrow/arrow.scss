@@ -1,0 +1,35 @@
+@import "../../../styles/colors";
+
+.arrow_ {
+  &container {
+    position: relative;
+    z-index: 101;
+
+    .icon_container {
+      position: absolute;
+      background-color: $light;
+      border-radius: 50%;
+      padding: 0;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+    }
+  }
+
+  &up {
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  &down {
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+    z-index: 100;
+  }
+}

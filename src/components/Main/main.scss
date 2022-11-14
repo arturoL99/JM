@@ -1,4 +1,4 @@
-@import "./colors";
+@import "../../../styles/colors";
 
 .main_container {
   position: relative;
@@ -13,7 +13,7 @@
 
 .info {
   z-index: 90;
-
+  opacity: 0;
   h1{
     color: $light;
   }

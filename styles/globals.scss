@@ -28,44 +28,6 @@ a {
   }
 }
 
-.arrow_ {
-  &up {
-    position: absolute;
-    top: 10px;
-    cursor: pointer;
-    z-index: 100;
-    transition: 1s;
-  }
-
-  &down {
-    position: absolute;
-    bottom: 10px;
-    transform: rotate(180deg);
-    cursor: pointer;
-    z-index: 100;
-    transition: 1s;
-  }
-
-  &up_hide {
-    position: absolute;
-    top: 10px;
-    cursor: pointer;
-    z-index: 100;
-    opacity: 0;
-    transition: 1s;
-  }
-
-  &down_hide {
-    position: absolute;
-    bottom: 10px;
-    transform: rotate(180deg);
-    cursor: pointer;
-    z-index: 100;
-    opacity: 0;
-    transition: 1s;
-  }
-}
-
 .index {
   display: flex;
   flex-direction: column;
@@ -88,12 +50,4 @@ a {
 .title {
   font-size: 60px;
   font-weight: 600;
-}
-
-.arrow_up:hover{
-  transform: scale(1.2);
-}
-
-.arrow_down:hover{
-  transform: rotate(180deg) scale(1.2);
 }

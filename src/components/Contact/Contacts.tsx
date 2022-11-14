@@ -1,9 +1,10 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import ContactModal from "./ContactModal";
 import Image from "next/image";
-import instagram from "../images/icons8-instagram.svg";
-import mail from "../images/icons8-gmail.svg";
+import instagram from "../../images/icons8-instagram.svg";
+import mail from "../../images/icons8-gmail.svg";
 import Link from "next/link";
+import { animateModal } from "../../utils/ModalUtil";
 
 type Props = {
   contactsClass: string;
@@ -11,6 +12,11 @@ type Props = {
 
 const Contacts: FC<Props> = ({ contactsClass }) => {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+      animateModal(open);
+  }, [open]);
+
   return (
     <section id="contacts" className={`${contactsClass} contacts_container`}>
       <div className="contacts">
@@ -41,7 +47,7 @@ const Contacts: FC<Props> = ({ contactsClass }) => {
           />
         </div>
       </div>
-      <ContactModal open={open} setOpen={setOpen} />
+      <ContactModal email="elias@gmail.com" setOpen={setOpen} />
     </section>
   );
 };

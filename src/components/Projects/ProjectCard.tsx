@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "../types/Project";
+import { Project } from "../../types/Project";
 
 type Props = {
   project: Project;
@@ -15,6 +15,7 @@ const ProjectCard: FC<Props> = ({ project }) => {
       className="imgCard"
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
+      key={project.name}
     >
       <Image
         src={`https:${project.image.url}`}

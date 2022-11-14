@@ -1,15 +1,16 @@
 import anime from "animejs";
 import { FC, useEffect, useState } from "react";
 
-const Test:FC = () => {
+const Test: FC = () => {
   const [wrapper, setWrapper] = useState<HTMLElement | null>();
+
   useEffect(() => {
-    setWrapper(document.getElementById("tiles"));
+    if (!wrapper) setWrapper(document.getElementById("tiles"));
   });
 
   let columns = 0,
     rows = 0,
-    toggled = false;
+    toggled = true;
 
   const toggle = () => {
     toggled = !toggled;
@@ -37,7 +38,7 @@ const Test:FC = () => {
     tile.style.opacity = toggled ? "0" : "1";
 
     tile.onclick = (e) => {
-        handleOnClick(index);
+      handleOnClick(index);
     };
 
     return tile;
@@ -53,12 +54,9 @@ const Test:FC = () => {
   const createGrid = () => {
     if (wrapper) {
       wrapper.innerHTML = "";
-
       const size = document.body.clientWidth > 800 ? 100 : 50;
-
       columns = Math.floor(document.body.clientWidth / size);
       rows = Math.floor(document.body.clientHeight / size);
-
       wrapper.style.setProperty("--columns", `${columns}`);
       wrapper.style.setProperty("--rows", `${rows}`);
 
@@ -68,8 +66,12 @@ const Test:FC = () => {
 
   useEffect(() => {
     createGrid();
-    window.onresize = () => createGrid();
-  });
+    if (wrapper) {
+      setTimeout(() => {
+        handleOnClick(50);
+      }, 1000);
+    }
+  }, [wrapper]);
 
   return <div id="tiles"></div>;
 };

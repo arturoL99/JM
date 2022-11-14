@@ -1,6 +1,13 @@
-@import "./colors";
+@import "../../../styles/colors";
 
 form {
+  .form_column{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .field {
     width: 90%;
     position: relative;
@@ -54,7 +61,8 @@ form {
     transform: scaleX(1);
   }
 
-  .field:focus-within label {
+  .field:focus-within label,
+  input:not(:placeholder-shown) + label {
     transform: scale(0.8) translateY(-5rem);
   }
 
@@ -62,11 +70,10 @@ form {
     outline: none;
     border: none;
     margin: 0;
-    min-height: 10vh;
-    max-height: 10vh;
+    min-height: 23vh;
+    max-height: 23vh;
     max-width: 100%;
     min-width: 100%;
-    padding: 0 0.25rem 0;
     background: #05080f87;
     padding: 5px;
     font-size: 1.2rem;
@@ -75,9 +82,9 @@ form {
   .form_btn {
     position: relative;
     padding: 20px 10px;
+    margin: 0 1rem;
     width: 90%;
     height: 5vh;
-    margin: 10px 0;
     border-radius: 10px;
     border: 2px solid transparent;
     color: $light;
@@ -85,7 +92,7 @@ form {
     font-weight: 600;
     cursor: pointer;
     background-color: transparent;
-    transition: 500ms ease-in-out;
+    transition: 500ms border ease-in-out;
 
     span {
       position: absolute;
@@ -102,6 +109,11 @@ form {
       left: 50%;
       transform: translate(-50%, -50%);
     }
+  }
+
+  .form_btn:active {
+    background-color: $light;
+    color: $dark;
   }
 }
 

@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
-import { Project } from "../types/Project";
-import ImagesContainer from "./ImagesContainer";
+import { Project } from "../../types/Project";
+import ImagesContainer from "./ProjectsContainer";
 
 type Props = {
   projects: Project[];
