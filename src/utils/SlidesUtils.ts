@@ -4,7 +4,6 @@ export const goUp = (
   active: string,
   setActive: Dispatch<SetStateAction<string>>
 ) => {
-  console.log("goUp");
   switch (active) {
     case "main":
       setActive("projects");
@@ -22,7 +21,6 @@ export const goDown = (
   active: string,
   setActive: Dispatch<SetStateAction<string>>
 ) => {
-  console.log("goDown");
   switch (active) {
     case "main":
       setActive("contacts");

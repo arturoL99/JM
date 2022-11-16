@@ -1,11 +1,8 @@
-import anime from "animejs";
 import { FC, useEffect, useState } from "react";
 import { createGrid, handleOnClick } from "../../utils/TilesUtils";
 
 const Test: FC = () => {
   const [wrapper, setWrapper] = useState<HTMLElement | null>();
-  const [rows, setRows] = useState(10);
-  const [columns, setColumns] = useState(10);
 
   useEffect(() => {
     if (!wrapper) setWrapper(document.getElementById("tiles"));
@@ -13,9 +10,9 @@ const Test: FC = () => {
 
   useEffect(() => {
     if (wrapper) {
-      createGrid(wrapper, columns, rows, setColumns, setRows);
+      createGrid(wrapper);
       setTimeout(() => {
-        handleOnClick(50, columns, rows);
+        handleOnClick(50, 10, 10);
       }, 1000);
     }
   }, [wrapper]);

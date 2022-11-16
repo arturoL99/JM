@@ -30,22 +30,10 @@ export default function Home(props: { projects: Project[] }) {
   const [hideBottom, setHideBottom] = useState(false);
 
   useEffect(() => {
-    if (active === "projects") {
-      moveProjectsContainer(active);
-      setHideTop(true);
-    }
-    if (active === "contacts") {
-      moveContactsContainer(active);
-      setHideBottom(true);
-    } 
-    if(active === "main") {
-      moveProjectsContainer(active);
-      moveContactsContainer(active);
-      setHideTop(false);
-      setHideBottom(false);
-    }
-    }, [active]);
-  console.log(active);
+    active === "projects" ? setHideTop(true) : setHideTop(false);
+    active === "contacts" ? setHideBottom(true) : setHideBottom(false);
+  }, [active]);
+
   return (
     <div className="index">
       <Head>

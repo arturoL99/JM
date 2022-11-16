@@ -1,5 +1,4 @@
 import anime from "animejs";
-import { Dispatch, SetStateAction } from "react";
 
 let toggled = true;
 
@@ -21,51 +20,40 @@ export const handleOnClick = (index: number, columns: number, rows: number) => {
   });
 };
 
-const createTile = (index: number, columns: number,
-    rows: number,) => {
+const createTile = (index: number, columns: number, rows: number) => {
   const tile = document.createElement("div");
-
   tile.classList.add("tile");
-
   tile.style.opacity = toggled ? "0" : "1";
 
   tile.onclick = (e) => {
     handleOnClick(index, columns, rows);
   };
-
   return tile;
 };
 
-const createTiles = (wrapper: HTMLElement | null, quantity: number, columns: number,
-    rows: number,) => {
+const createTiles = (
+  wrapper: HTMLElement | null,
+  quantity: number,
+  columns: number,
+  rows: number
+) => {
   if (wrapper)
     Array.from(Array(quantity)).map((tile, index) => {
       wrapper.appendChild(createTile(index, columns, rows));
     });
 };
 
-export const createGrid = (
-  wrapper: HTMLElement | null,
-  columns: number,
-  rows: number,
-  setColumns: Dispatch<SetStateAction<number>>,
-  setRows: Dispatch<SetStateAction<number>>
-) => {
+export const createGrid = (wrapper: HTMLElement | null) => {
   if (wrapper) {
     wrapper.innerHTML = "";
     const size = document.body.clientWidth > 800 ? 100 : 50;
-    setColumns(Math.floor(document.body.clientWidth / size));
-    setRows(Math.floor(document.body.clientHeight / size));
-    if (columns != 0 && rows != 0) {
-      // PROBLEMA --> quando crea grid considera ancora valori 0
-      wrapper.style.setProperty("--columns", `${columns}`); //al primo load = 0
-      wrapper.style.setProperty("--rows", `${rows}`); //al primo load = 0
-    } else {
-      wrapper.style.setProperty("--columns", `${10}`); //al primo load = 0
-      wrapper.style.setProperty("--rows", `${10}`);
-    }
+    const columns = Math.floor(document.body.clientWidth / size);
+    const rows = Math.floor(document.body.clientHeight / size);
+
+    wrapper.style.setProperty("--columns", `${columns}`);
+    wrapper.style.setProperty("--rows", `${rows}`);
     console.log(columns, rows);
     const tiles = columns * rows;
-    createTiles(wrapper, tiles, columns, rows );
+    createTiles(wrapper, tiles, columns, rows);
   }
 };
