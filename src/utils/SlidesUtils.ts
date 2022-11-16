@@ -13,6 +13,7 @@ export const goUp = (
       setActive("main");
       break;
     default:
+      setActive("projects");
       break;
   }
 };
@@ -30,6 +31,7 @@ export const goDown = (
       setActive("main");
       break;
     default:
+      setActive("contacts");
       break;
   }
 };

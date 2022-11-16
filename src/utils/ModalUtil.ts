@@ -15,11 +15,11 @@ export const animateModal = (open: boolean) => {
 };
 
 export const moveContactsContainer = (active:string) => {
-  const top = active === "contacts" ? "0%" : "100%";
+  const top = active === "contacts" ? "-100%" : "0";
   console.log("dio can");
   anime({
     targets: ".contacts_container",
-    top: top,
+    translateY: top,
     duration: 1000,
     easing: "linear",
   });
