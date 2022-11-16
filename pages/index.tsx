@@ -9,11 +9,12 @@ import Projects from "../src/components/Projects/Projects";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import contentfulClient from "../src/client/ContentfulClient";
-import { mapProjects } from "../src/utils/ProjectUtils";
+import { mapProjects, moveProjectsContainer } from "../src/utils/ProjectUtils";
 import { Project } from "../src/types/Project";
 import Arrow from "../src/components/Arrow/Arrow";
 import projectIcon from "../src/images/icons8-projects.webp";
 import contactIcon from "../src/images/icons8-contacts.webp";
+import { moveContactsContainer } from "../src/utils/ModalUtil";
 
 export async function getStaticProps() {
   const contentfulProjects = await contentfulClient
@@ -24,20 +25,26 @@ export async function getStaticProps() {
 }
 
 export default function Home(props: { projects: Project[] }) {
-  const [mainClass, setMainClass] = useState("active");
-  const [projectsClass, setProjectsClass] = useState("up");
-  const [contactsClass, setContactsClass] = useState("down");
+  const [active, setActive] = useState("main");
   const [hideTop, setHideTop] = useState(false);
   const [hideBottom, setHideBottom] = useState(false);
 
   useEffect(() => {
-    projectsClass === "active" ? setHideTop(true) : setHideTop(false);
-  }, [projectsClass]);
-
-  useEffect(() => {
-    contactsClass === "active" ? setHideBottom(true) : setHideBottom(false);
-  }, [contactsClass]);
-
+    if (active === "projects") {
+      moveProjectsContainer(active);
+      setHideTop(true);
+    }
+    if (active === "contacts") {
+      moveContactsContainer(active);
+      setHideBottom(true);
+    } else {
+      moveProjectsContainer(active);
+      moveContactsContainer(active);
+      setHideTop(false);
+      setHideBottom(false);
+    }
+  }, [active]);
+  console.log(active);
   return (
     <div className="index">
       <Head>
@@ -49,27 +56,23 @@ export default function Home(props: { projects: Project[] }) {
       <Arrow
         icon={projectIcon}
         hide={hideTop}
-        mainClass={mainClass}
+        active={active}
+        setActive={setActive}
         arrowClass="arrow_up"
         direction={goUp}
-        setContactsClass={setContactsClass}
-        setMainClass={setMainClass}
-        setProjectsClass={setProjectsClass}
       />
 
       <Main />
-      <Contacts contactsClass={contactsClass} />
-      <Projects projectsClass={projectsClass} projects={props.projects} />
+      <Contacts active={active} />
+      <Projects active={active} projects={props.projects} />
 
       <Arrow
         hide={hideBottom}
         arrowClass="arrow_down"
         icon={contactIcon}
-        mainClass={mainClass}
+        active={active}
+        setActive={setActive}
         direction={goDown}
-        setContactsClass={setContactsClass}
-        setMainClass={setMainClass}
-        setProjectsClass={setProjectsClass}
       />
 
       <ToastContainer

@@ -4,24 +4,31 @@ import Image from "next/image";
 import instagram from "../../images/icons8-instagram.svg";
 import mail from "../../images/icons8-gmail.svg";
 import Link from "next/link";
-import { animateModal } from "../../utils/ModalUtil";
+import { animateModal, moveContactsContainer } from "../../utils/ModalUtil";
 
 type Props = {
-  contactsClass: string;
+  active: string;
 };
 
-const Contacts: FC<Props> = ({ contactsClass }) => {
+const Contacts: FC<Props> = ({ active }) => {
   const [open, setOpen] = useState(false);
 
+  // useEffect(() => {
+  //   moveContactsContainer(active);
+  // }, [active]);
+
   useEffect(() => {
-      animateModal(open);
+    animateModal(open);
   }, [open]);
 
   return (
-    <section id="contacts" className={`${contactsClass} contacts_container`}>
+    <section id="contacts" className={`contacts_container`}>
       <div className="contacts">
         <h1 className="title">
-          Discover the power of <b>JEAN</b>
+          Discover the power of{" "}
+          <span className="animate-charcter" onClick={() => setOpen(!open)}>
+            JEAN
+          </span>
         </h1>
 
         <div className="icon_container">

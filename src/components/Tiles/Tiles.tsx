@@ -1,74 +1,21 @@
 import anime from "animejs";
 import { FC, useEffect, useState } from "react";
+import { createGrid, handleOnClick } from "../../utils/TilesUtils";
 
 const Test: FC = () => {
   const [wrapper, setWrapper] = useState<HTMLElement | null>();
+  const [rows, setRows] = useState(10);
+  const [columns, setColumns] = useState(10);
 
   useEffect(() => {
     if (!wrapper) setWrapper(document.getElementById("tiles"));
   });
 
-  let columns = 0,
-    rows = 0,
-    toggled = true;
-
-  const toggle = () => {
-    toggled = !toggled;
-
-    document.body.classList.toggle("toggled");
-  };
-
-  const handleOnClick = (index: number) => {
-    toggle();
-    anime({
-      targets: [".tile", ".info"],
-      opacity: toggled ? 0 : 1,
-      delay: anime.stagger(50, {
-        grid: [columns, rows],
-        from: index,
-      }),
-    });
-  };
-
-  const createTile = (index: number) => {
-    const tile = document.createElement("div");
-
-    tile.classList.add("tile");
-
-    tile.style.opacity = toggled ? "0" : "1";
-
-    tile.onclick = (e) => {
-      handleOnClick(index);
-    };
-
-    return tile;
-  };
-
-  const createTiles = (quantity: number) => {
-    if (wrapper)
-      Array.from(Array(quantity)).map((tile, index) => {
-        wrapper.appendChild(createTile(index));
-      });
-  };
-
-  const createGrid = () => {
-    if (wrapper) {
-      wrapper.innerHTML = "";
-      const size = document.body.clientWidth > 800 ? 100 : 50;
-      columns = Math.floor(document.body.clientWidth / size);
-      rows = Math.floor(document.body.clientHeight / size);
-      wrapper.style.setProperty("--columns", `${columns}`);
-      wrapper.style.setProperty("--rows", `${rows}`);
-
-      createTiles(columns * rows);
-    }
-  };
-
   useEffect(() => {
-    createGrid();
     if (wrapper) {
+      createGrid(wrapper, columns, rows, setColumns, setRows);
       setTimeout(() => {
-        handleOnClick(50);
+        handleOnClick(50, columns, rows);
       }, 1000);
     }
   }, [wrapper]);

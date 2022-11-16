@@ -7,28 +7,21 @@ import { hoverArrow } from "../../utils/AnimeUtils";
 type Props = {
   icon: StaticImageData;
   hide: boolean;
-  mainClass: string;
+  active:string;
+  setActive: Dispatch<SetStateAction<string>>;
   arrowClass: string;
   direction: (
-    mainClass: string,
-    setMainClass: Dispatch<SetStateAction<string>>,
-    setProjectsClass: Dispatch<SetStateAction<string>>,
-    setContactsClass: Dispatch<SetStateAction<string>>
+    active:string, setActive:Dispatch<SetStateAction<string>>
   ) => void;
-  setMainClass: Dispatch<SetStateAction<string>>;
-  setProjectsClass: Dispatch<SetStateAction<string>>;
-  setContactsClass: Dispatch<SetStateAction<string>>;
 };
 
 const Arrow: FC<Props> = ({
   icon,
   hide,
-  mainClass,
   arrowClass,
   direction,
-  setMainClass,
-  setProjectsClass,
-  setContactsClass,
+  active,
+  setActive
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -44,7 +37,7 @@ const Arrow: FC<Props> = ({
       onMouseLeave={() => {
         setTimeout(() => {
           setHover(false);
-        }, 1000);
+        }, 500);
       }}
     >
       <Image
@@ -54,17 +47,17 @@ const Arrow: FC<Props> = ({
         height={40}
         className={`${arrowClass}`}
         onClick={() =>
-          direction(mainClass, setMainClass, setProjectsClass, setContactsClass)
+          direction(active, setActive)
         }
         loading="lazy"
       />
       <div
         className={`icon_container`}
         onClick={() =>
-          direction(mainClass, setMainClass, setProjectsClass, setContactsClass)
+          direction(active, setActive)
         }
       >
-        {mainClass === "active" ? (
+        {active === "main" ? (
           <Image src={icon} alt="icon" width={30} height={30} />
         ) : (
           <Image src={homeIcon} alt="icon" width={30} height={30} />

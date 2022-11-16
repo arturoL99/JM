@@ -11,13 +11,14 @@
   width: 100vw;
   position: fixed;
   background-color: $light;
-  transition: 1s top, bottom;
+  // transition: 1s top, bottom;
   z-index: 99;
   color: $dark;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  top: 100%;
 
   b:hover {
     cursor: pointer;
