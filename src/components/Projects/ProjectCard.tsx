@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "../../types/Project";
+import eye from "../../images/eye.gif";
 
 type Props = {
   project: Project;
@@ -17,6 +18,7 @@ const ProjectCard: FC<Props> = ({ project }) => {
       onMouseLeave={() => setActive(false)}
       key={project.name}
     >
+      <Image src={eye} alt="eye" width={50} height={50} loading="lazy" className={active ? "imgCard_eye eye_open" : "imgCard_eye"} />
       <Image
         src={`https:${project.image.url}`}
         alt={project.name}

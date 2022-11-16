@@ -7,8 +7,8 @@ import {
   moveProjectsContainer,
   moveTitle,
 } from "../../utils/ProjectUtils";
-import ImagesContainer from "./ProjectsContainer";
-import arrow from "../../images/icons8-freccia-sinistra.webp";
+import ProjectsContainer from "./ProjectsContainer";
+import arrow from "../../images/arrow.gif";
 
 type Props = {
   projects: Project[];
@@ -19,16 +19,13 @@ const Projects: FC<Props> = ({ projects, active }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    moveProjectsArrow();
-  }, []);
-
-  useEffect(() => {
     moveProjectsContainer(active);
   }, [active]);
 
   useEffect(() => {
     moveTitle(open);
     moveProjects(open);
+    moveProjectsArrow(open);
   }, [open]);
 
   return (
@@ -39,7 +36,7 @@ const Projects: FC<Props> = ({ projects, active }) => {
             I'm such an artist, <br />
             Look at my{" "}
             <span className="animate-charcter" onClick={() => setOpen(!open)}>
-              stuff
+              STUFF
             </span>
           </h1>
           <Image
@@ -51,7 +48,7 @@ const Projects: FC<Props> = ({ projects, active }) => {
           />
         </div>
         <div className={"projects"}>
-          <ImagesContainer projects={projects} />
+          <ProjectsContainer projects={projects} />
         </div>
       </div>
     </section>

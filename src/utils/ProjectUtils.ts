@@ -49,17 +49,14 @@ export const moveProjects = (open: boolean) => {
   animation.play();
 };
 
-export const moveProjectsArrow = () => {
-  anime({
+export const moveProjectsArrow = (open:boolean) => {
+  const rotate = anime({
     targets: ".projects_arrow",
-    right: [-40, -60],
-    bottom: [10, 10],
-    duration: 800,
-    direction: "alternate",
-    loop: true,
+    rotate: open ? [90 , 0] : [0, 90],
+    duration: 1000,
     easing: "linear",
-    autoplay: true
   });
+  rotate.play();
 };
 
 export const moveProjectsContainer = (active:string) => {
