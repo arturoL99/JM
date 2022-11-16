@@ -37,13 +37,14 @@ export default function Home(props: { projects: Project[] }) {
     if (active === "contacts") {
       moveContactsContainer(active);
       setHideBottom(true);
-    } else {
+    } 
+    if(active === "main") {
       moveProjectsContainer(active);
       moveContactsContainer(active);
       setHideTop(false);
       setHideBottom(false);
     }
-  }, [active]);
+    }, [active]);
   console.log(active);
   return (
     <div className="index">

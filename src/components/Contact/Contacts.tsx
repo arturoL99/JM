@@ -13,9 +13,9 @@ type Props = {
 const Contacts: FC<Props> = ({ active }) => {
   const [open, setOpen] = useState(false);
 
-  // useEffect(() => {
-  //   moveContactsContainer(active);
-  // }, [active]);
+  useEffect(() => {
+    moveContactsContainer(active);
+  }, [active]);
 
   useEffect(() => {
     animateModal(open);

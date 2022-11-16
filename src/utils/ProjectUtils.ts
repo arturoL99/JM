@@ -63,10 +63,10 @@ export const moveProjectsArrow = () => {
 };
 
 export const moveProjectsContainer = (active:string) => {
-  const top= active === "projects" ? "0%" : "-100%";
+  const top= active === "projects" ? "100vh" : "0";
   anime({
     targets: ".projects_container",
-    top: top,
+    translateY: top,
     duration: 1000,
     easing: "linear",
   });
