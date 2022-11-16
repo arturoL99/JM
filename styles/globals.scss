@@ -1,12 +1,13 @@
 @import "./colors";
+@import "./typography";
 
 html,
 body {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Mersad";
+  font-weight: normal;
 }
 
 a {
@@ -57,7 +58,6 @@ a {
 }
 
 .animate-charcter {
-  text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
     #197278 0%,
@@ -68,14 +68,15 @@ a {
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
-  color: #fff;
+  padding-top: 2px;
+  color: $dark;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 5s linear infinite;
   display: inline-block;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: bold;
   transition: 300ms ease-in-out;
 }
 

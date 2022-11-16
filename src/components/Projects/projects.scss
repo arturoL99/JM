@@ -24,6 +24,8 @@
 
   &_arrow{
     position: absolute;
+    right: -40px;
+    bottom: 20%;
   }
 }
 
@@ -32,7 +34,6 @@
   width: 100vw;
   position: absolute;
   background-color: $light;
-  // transition: 1s top, bottom;
   top: -100vh;
   z-index: 99;
   color: $dark;

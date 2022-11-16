@@ -10,7 +10,7 @@
 }
 
 .project_img {
-  max-height: 60vh;
+  max-height: 70vh;
   width: auto;
 }
 
@@ -23,6 +23,18 @@
   justify-content: space-between;
   margin: 0 10px;
   border: 3px solid transparent;
+
+  &_eye{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 1s ease-in-out;
+  }
+
+  .eye_open{
+    opacity: 1;
+  }
 
   &_text {
     width: 100%;
