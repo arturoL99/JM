@@ -16,7 +16,6 @@ export const animateModal = (open: boolean) => {
 
 export const moveContactsContainer = (active:string) => {
   const top = active === "contacts" ? "-100%" : "0";
-  console.log("dio can");
   anime({
     targets: ".contacts_container",
     translateY: top,
