@@ -72,13 +72,3 @@ export const aniTest = (
     elasticity: 400,
   });
 };
-
-// export const revAniTest = () => {
-//   return anime({
-//     targets: `.test_ani`,
-//     opacity: 1,
-//     scale: [1.3, 1],
-//     duration: 2000,
-//     elasticity: 400,
-//   });
-// };

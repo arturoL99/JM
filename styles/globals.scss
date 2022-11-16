@@ -55,3 +55,30 @@ a {
 .hide{
   display: none;
 }
+
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #197278 0%,
+    #003566 29%,
+    #848fa5 67%,
+    #cc5803 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 300ms ease-in-out;
+}
+
+.animate-charcter:hover{
+  transform: scale(1.1);
+}

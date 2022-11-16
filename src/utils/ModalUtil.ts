@@ -10,6 +10,17 @@ export const animateModal = (open: boolean) => {
     bottom: bottom,
     translateY: "50%",
     duration: 1500,
-    easing: "easeInOutExpo",
+    easing: "easeInOutQuint",
+  });
+};
+
+export const moveContactsContainer = (active:string) => {
+  const top = active === "contacts" ? "0%" : "100%";
+  console.log("dio can");
+  anime({
+    targets: ".contacts_container",
+    top: top,
+    duration: 1000,
+    easing: "linear",
   });
 };
