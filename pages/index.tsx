@@ -33,7 +33,7 @@ export default function Home(props: { projects: Project[] }) {
     active === "projects" ? setHideTop(true) : setHideTop(false);
     active === "contacts" ? setHideBottom(true) : setHideBottom(false);
   }, [active]);
-
+console.log(props.projects);
   return (
     <div className="index">
       <Head>

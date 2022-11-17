@@ -18,7 +18,7 @@ export const mapProjects = (contentfulProjects: any[]) => {
 };
 
 export const moveTitle = (open: boolean) => {
-  const top = open ? "10%" : "50%";
+  const top = open ? "13%" : "50%";
   const left = open ? "5%" : "50%";
   const translateX = open ? "0%" : "-50%";
   const easin = open ? "easeOutQuart" : "easeInQuart";
