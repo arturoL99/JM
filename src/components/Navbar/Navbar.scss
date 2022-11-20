@@ -8,6 +8,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    z-index: 100;
 
     .nav_icon_container{
         border-radius: 100%;

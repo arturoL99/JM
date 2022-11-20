@@ -12,10 +12,14 @@
 }
 
 .info {
-  z-index: 90;
   opacity: 0;
   height: fit-content;
   width: 50vw;
+  
+  @media(max-width: 950px){
+      width: 70vw;
+      
+    }
   
   &_title{
     position: absolute;
@@ -29,6 +33,7 @@
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
+    width: 100%;
   }
 
   &_description{
@@ -37,6 +42,12 @@
     font-size: 1.3rem;
     background-color: #0f0f0fb3;
     opacity: 0;
+    width: 70vw;
+
+    @media(max-width: 950px){
+      max-height: 100%; 
+      font-size: 1rem;
+    }
   }
 
   .info_icon_container {

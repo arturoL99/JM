@@ -5,12 +5,13 @@ import { Parallax } from "react-scroll-parallax";
 
 type Props = {
     photos:ContentfulImg[];
+    mobile:boolean;
 }
 
-const Photos:FC<Props> = ({photos}) => {
+const Photos:FC<Props> = ({photos, mobile}) => {
     return(
         <div id="photos_container">
-        <Parallax speed={-20} className="photos_column">
+        <Parallax speed={mobile ? 0 : -10} className="photos_column">
           {photos.map((photo, i) => {
             if (i % 2 === 0)
               return (
@@ -25,7 +26,7 @@ const Photos:FC<Props> = ({photos}) => {
               );
           })}
         </Parallax>
-        <Parallax speed={30} className="photos_column">
+        <Parallax speed={mobile ? 0 : 40} className="photos_column">
           {photos.map((photo, i) => {
             if (i % 2 !== 0)
               return (
