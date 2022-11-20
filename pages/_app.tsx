@@ -10,11 +10,11 @@ import "../src/components/Contact/form.scss";
 import "../src/components/Arrow/arrow.scss";
 import "../src/components/Navbar/Navbar.scss";
 import "../src/components/Photos/Photos.scss";
+import "../src/components/Title/Title.scss";
 import "../styles/test.scss";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

@@ -33,7 +33,7 @@ const Projects: FC<Props> = ({ projects, active }) => {
       <div className="content_container">
         <div className={"projects_title"}>
           <h1 className="title">
-            I'm such an artist, <br />
+            <span className="hideMobile">I'm such an artist,</span> <br />
             Look at my{" "}
             <span className="animate-charcter" onClick={() => setOpen(!open)}>
               STUFF

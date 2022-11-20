@@ -15,7 +15,10 @@
     position: absolute;
     transform: translate(0%, -50%);
     z-index: 110;
-    line-height: 60px;
+    
+    @media(max-width: 950px){
+      width: 70vw;
+    }
   }
 
   &_arrow{

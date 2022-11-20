@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { moveInfo } from "../../utils/MainUtils";
 import Shapes from "../Shapes/Shapes";
 import Tiles from "../Tiles/Tiles";
-import info from "../../images/info.gif";
+import info from "../../images/info.webp";
 
 const Main: FC = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleClick = () => {
     console.log(open);
@@ -19,20 +19,21 @@ const Main: FC = () => {
       <div className="info">
         <div className="info_title" onClick={handleClick}>
           <h1 className="title">Elias Merino</h1>
-          <div className={open ? "hide" : "info_icon_container"}>
+          <div className="info_icon_container">
             <Image
-            src={info}
-            alt="info"
-            height={50}
-            width={50}
-            loading="lazy"
-            className="info_icon"
-          />
+              src={info}
+              alt="info"
+              height={30}
+              width={30}
+              loading="lazy"
+              className="info_icon"
+            />
           </div>
-          
         </div>
 
-        <p className="info_description">
+        
+      </div>
+      <p className="info_description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
           finibus gravida ex, sit amet finibus nulla tristique iaculis.{" "}
           <b>Curabitur nec pharetra enim</b>. Sed venenatis tellus non turpis
@@ -43,7 +44,6 @@ const Main: FC = () => {
           ultricies tincidunt. Mauris quis nisl fringilla, aliquet lacus sed,
           fermentum ipsum. Praesent et arcu lorem.
         </p>
-      </div>
       <Shapes />
       <Tiles />
     </div>
