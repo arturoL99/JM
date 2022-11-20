@@ -1,11 +1,11 @@
-import { FC, MutableRefObject } from "react";
+import { FC } from "react";
 import Image from "next/image";
 import { ContentfulImg } from "../../types/ContentfulImg";
 import { Parallax } from "react-scroll-parallax";
 
 type Props = {
     photos:ContentfulImg[];
-    mobile:boolean;
+    mobile:boolean | undefined;
 }
 
 const Photos:FC<Props> = ({photos, mobile}) => {
