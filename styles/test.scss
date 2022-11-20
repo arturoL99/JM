@@ -1,15 +1,14 @@
-.test_ani{
-    width: 50vw;
-    height: 50vh;
-    background-color: beige;
+#test{
+    height: 300vh;
+    width: 100vw;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#test{
-    height: 100vh;
-    width: 100vw;
-
-    button{
-        position: fixed;
-        bottom: 0;
-    }
+.test{
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
 }

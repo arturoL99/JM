@@ -14,7 +14,40 @@
 .info {
   z-index: 90;
   opacity: 0;
-  h1{
+  height: fit-content;
+  width: 50vw;
+  
+  &_title{
+    position: absolute;
     color: $light;
+    z-index: 95;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    cursor: pointer;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  &_description{
+    z-index: 90;
+    text-align: justify;
+    font-size: 1.3rem;
+    background-color: #0f0f0fb3;
+    opacity: 0;
+  }
+
+  .info_icon_container {
+    background-color: $light;
+    border-radius: 50%;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
 }

@@ -1,21 +1,26 @@
-import ContactForm from "../src/components/Contact/ContactForm";
-import Player from "../src/components/Player";
 import animation from "animejs";
 import { aniTest } from "../src/utils/AnimeUtils";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 export default function Test() {
-  const [open, setOpen] = useState(true)
-  const reverseAni = (open:boolean) => {
-    aniTest(open, 1, 2).play()
-    setOpen(!open);
-  }
-  return (
-    <div id="test">
-      <div className="test_ani">
+  const [open, setOpen] = useState(true);
 
-      </div>
-      <button onClick={() => reverseAni(open)}>DIOCANE</button>
-    </div>
+  const target = useRef(null);
+
+  return (
+    <ParallaxProvider>
+
+				<div id="test">
+					<h1>Disable React-Scroll-Parallax on mobile</h1>
+					<h3>(resize the window to see it in action)</h3>
+					<Parallax
+						speed={-23}
+            className="test"
+						>
+						<h3>With Methods</h3>
+					</Parallax>
+				</div>
+			</ParallaxProvider>
   );
 }

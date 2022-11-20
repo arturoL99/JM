@@ -1,0 +1,35 @@
+@import "../../../styles/colors";
+
+#photos_container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+  
+    .photos_column{
+      width: 50%;
+      height: fit-content;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10vh;
+    }
+  }
+  
+  .photos{
+      max-width: 40vw;
+      height: auto;
+      max-height: 100vh;
+  }
+  
+  .scroll_icon{
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+    transition: 300ms;
+  }
+
+  .scroll_icon:hover{
+    transform: scale(1.1);
+  }

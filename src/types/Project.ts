@@ -1,6 +1,8 @@
 import { ContentfulImg } from "./ContentfulImg";
 
 export type Project = {
-  image: ContentfulImg;
   name: string;
+  description: any;
+  image: ContentfulImg;
+  photos: ContentfulImg[];
 };

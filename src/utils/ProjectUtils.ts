@@ -1,20 +1,55 @@
 import anime from "animejs";
+import { ContentfulImg } from "../types/ContentfulImg";
 import { Project } from "../types/Project";
 
 export const mapProjects = (contentfulProjects: any[]) => {
   const projects: Project[] = [];
+  const photos: ContentfulImg[] = [];
   contentfulProjects.map((contentfulProject) => {
+    if(contentfulProject.fields.photos){
+    contentfulProject.fields.photos.map((photo: any) => {
+      photos.push({
+        url: photo.fields.file.url,
+        height: photo.fields.file.details.image.height,
+        width: photo.fields.file.details.image.width,
+      });
+    });
+  }
     const project: Project = {
+      name: contentfulProject.fields.name,
       image: {
         url: contentfulProject.fields.image.fields.file.url,
         height: contentfulProject.fields.image.fields.file.details.image.height,
         width: contentfulProject.fields.image.fields.file.details.image.width,
       },
-      name: contentfulProject.fields.name,
+      photos: photos || null,
+      description: contentfulProject.fields.description || null,
     };
     projects.push(project);
   });
   return projects;
+};
+
+export const mapProject = (contentfulProject: any) => {
+  const photos: ContentfulImg[] = [];
+  contentfulProject.fields.photos.map((photo: any) => {
+    photos.push({
+      url: photo.fields.file.url,
+      height: photo.fields.file.details.image.height,
+      width: photo.fields.file.details.image.width,
+    });
+  });
+  const project: Project = {
+    name: contentfulProject.fields.name,
+    image: {
+      url: contentfulProject.fields.image.fields.file.url,
+      height: contentfulProject.fields.image.fields.file.details.image.height,
+      width: contentfulProject.fields.image.fields.file.details.image.width,
+    },
+    photos: photos,
+    description: contentfulProject.fields.description,
+  };
+  return project;
 };
 
 export const moveTitle = (open: boolean) => {
@@ -49,18 +84,18 @@ export const moveProjects = (open: boolean) => {
   animation.play();
 };
 
-export const moveProjectsArrow = (open:boolean) => {
+export const moveProjectsArrow = (open: boolean) => {
   const rotate = anime({
     targets: ".projects_arrow",
-    rotate: open ? [90 , 0] : [0, 90],
+    rotate: open ? [90, 0] : [0, 90],
     duration: 1000,
     easing: "linear",
   });
   rotate.play();
 };
 
-export const moveProjectsContainer = (active:string) => {
-  const top= active === "projects" ? "100vh" : "0";
+export const moveProjectsContainer = (active: string) => {
+  const top = active === "projects" ? "100vh" : "0";
   anime({
     targets: ".projects_container",
     translateY: top,

@@ -12,7 +12,7 @@ const ProjectCard: FC<Props> = ({ project }) => {
   const [active, setActive] = useState(false);
   return (
     <Link
-      href={""}
+      href={`/${project.name.toLowerCase()}`}
       className="imgCard"
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
