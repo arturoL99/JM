@@ -11,7 +11,7 @@ type Props = {
 const Photos:FC<Props> = ({photos, mobile}) => {
     return(
         <div id="photos_container">
-        <Parallax speed={mobile ? 0 : -10} className="photos_column">
+        <Parallax speed={0} className="photos_column">
           {photos.map((photo, i) => {
             if (i % 2 === 0)
               return (
