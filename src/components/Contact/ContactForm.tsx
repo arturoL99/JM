@@ -23,7 +23,7 @@ const ContactForm: FC<Props> = ({ onSubmit }) => {
     </div>
     <div className="form_column">
       <div className="field">
-        <textarea name="message" placeholder="Message" />
+        <textarea name="message" />
       </div>
       <button className="form_btn">
         <span>Send Message</span>

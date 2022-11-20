@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .nav_icon_container{
+        border-radius: 100%;
+        background-color: $light;
+        height: 50px;
+        width: 50px;
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
