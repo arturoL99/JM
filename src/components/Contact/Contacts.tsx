@@ -54,7 +54,7 @@ const Contacts: FC<Props> = ({ active }) => {
           />
         </div>
       </div>
-      <ContactModal email="elias@gmail.com" setOpen={setOpen} />
+      <ContactModal email="jeaneliasmerino@gmail.com" setOpen={setOpen} />
     </section>
   );
 };
