@@ -53,14 +53,14 @@ const ContactModal: FC<Props> = ({ setOpen, email }) => {
       <div className="modal_title">
         <a href={`mailto:${email}`} className="modal_email">
           <span>{email}</span>
-          <div className="email_icon">
-            
+          <div className="email_icon hideMobile">
             <Image
               src={mailIcon}
               alt="mail"
               width={30}
               height={30}
               loading="lazy"
+              className="hideMobile"
             />
           </div>
         </a>
