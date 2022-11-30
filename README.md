@@ -1,5 +1,5 @@
 This is a [Next.js](https://nextjs.org/) project written using Typescript, and Scss for styling.
-
+The site uses [Contentful](https://www.contentful.com/) as headless CMS to update the content.
 
 ## Getting Started
 
