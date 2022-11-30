@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 import { moveInfo } from "../../utils/MainUtils";
 import Shapes from "../Shapes/Shapes";
 import Tiles from "../Tiles/Tiles";
-import info from "../../images/info.webp";
+import logo from "../../images/Logo_White.png";
 
 const Main: FC = () => {
   const [open, setOpen] = useState(true);
@@ -18,17 +18,16 @@ const Main: FC = () => {
     <div className="main_container">
       <div className="info">
         <div className="info_title" onClick={handleClick}>
-          <h1 className="title">Elias Merino</h1>
-          <div className="info_icon_container">
+          
             <Image
-              src={info}
+              src={logo}
               alt="info"
-              height={30}
-              width={30}
+              height={60}
+              width={400}
               loading="lazy"
-              className="info_icon"
+              className="logo"
             />
-          </div>
+          
         </div>
 
         

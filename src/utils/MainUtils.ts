@@ -10,7 +10,7 @@ export const moveInfo = (open: boolean) => {
   });
 
   const aniTitle = anime({
-    targets: [".info_title", "info_icon_container"],
+    targets: ".info_title",
     opacity: open ? 0 : 1,
     duration: 1000,
     easing: "linear",
