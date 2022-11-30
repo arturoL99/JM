@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project written using Typescript, and S
 
 The site uses [Contentful](https://www.contentful.com/) as headless CMS to update the content.
 
+You can click [**here**](https://jm-tau.vercel.app/) to visit a live deploy of the site.
+
 ## Getting Started
 
 First, to install the dependencies:
