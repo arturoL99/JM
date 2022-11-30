@@ -1,4 +1,4 @@
-#JM
+# JM
 
 
 This is a [Next.js](https://nextjs.org/) project written using Typescript, and Scss for styling.
