@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org/){:target="_blank" rel="noopener"} project written using Typescript, and Scss for styling.
+This is a [Next.js](https://nextjs.org/) project written using Typescript, and Scss for styling.
 
-The site uses [Contentful](https://www.contentful.com/){:target="_blank" rel="noopener"} as headless CMS to update the content.
+The site uses [Contentful](https://www.contentful.com/) as headless CMS to update the content.
 
-You can click [**here**](https://jm-tau.vercel.app/){:target="_blank" rel="noopener"} to visit a live deploy of the site.
+You can click [**here**](https://jm-tau.vercel.app/) to visit a live deploy of the site.
 
 ## Getting Started
 
