@@ -65,12 +65,12 @@
 }
 
 .logo{
-  width: 20vw;
+  width: 35vmin;
   height: auto;
   transition: 500ms ease-in-out;
 
   @media(max-width: 950px){
-    width: 55vw;
+    width: 55vmin;
   }
 }
 
