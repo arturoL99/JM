@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { FC } from "react";
 
 type Props = {
   onSubmit: (e: any) => void;
@@ -6,7 +6,7 @@ type Props = {
 
 const ContactForm: FC<Props> = ({ onSubmit }) => {
   return (
-    <form onSubmit={() => console.log("onSubmit")}>
+    <form onSubmit={onSubmit}>
     <div className="form_column">
       <div className="field">
         <input type="text" name="name" placeholder="First Name" required />
