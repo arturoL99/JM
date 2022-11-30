@@ -11,7 +11,7 @@ const toggle = () => {
 export const handleOnClick = (index: number, columns: number, rows: number) => {
   toggle();
   anime({
-    targets: [".tile", ".info"],
+    targets: [".tile", ".info_title"],
     opacity: toggled ? 0 : 1,
     delay: anime.stagger(50, {
       grid: [columns, rows],

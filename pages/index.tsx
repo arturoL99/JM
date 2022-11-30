@@ -1,20 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import Main from "../src/components/Main/Main";
-import arrow from "../src/images/icons8-freccia.webp";
 import { goUp, goDown } from "../src/utils/SlidesUtils";
 import Contacts from "../src/components/Contact/Contacts";
 import Projects from "../src/components/Projects/Projects";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import contentfulClient from "../src/client/ContentfulClient";
-import { mapProjects, moveProjectsContainer } from "../src/utils/ProjectUtils";
+import { mapProjects } from "../src/utils/ProjectUtils";
 import { Project } from "../src/types/Project";
 import Arrow from "../src/components/Arrow/Arrow";
 import projectIcon from "../src/images/icons8-projects.webp";
 import contactIcon from "../src/images/icons8-contacts.webp";
-import { moveContactsContainer } from "../src/utils/ModalUtil";
 
 export async function getStaticProps() {
   const contentfulProjects = await contentfulClient

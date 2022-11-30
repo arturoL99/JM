@@ -12,7 +12,6 @@
 }
 
 .info {
-  opacity: 0;
   height: fit-content;
   width: 50vw;
   
@@ -22,6 +21,7 @@
     }
   
   &_title{
+    opacity: 0;
     position: absolute;
     color: $light;
     z-index: 95;
@@ -33,7 +33,7 @@
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    width: 100%;
+    width: fit-content;
   }
 
   &_description{
@@ -62,10 +62,18 @@
     align-items: center;
     cursor: pointer;
   }
-
-  
 }
 
-.info_icon_container:hover{
-    scale: 1.2;
+.logo{
+  width: 20vw;
+  height: auto;
+  transition: 500ms ease-in-out;
+
+  @media(max-width: 950px){
+    width: 55vw;
+  }
+}
+
+.logo:hover{
+    scale: 1.05;
   }
