@@ -18,7 +18,6 @@ const Main: FC = () => {
     <div className="main_container">
       <div className="info">
         <div className="info_title" onClick={handleClick}>
-          
             <Image
               src={logo}
               alt="info"
@@ -27,12 +26,9 @@ const Main: FC = () => {
               loading="lazy"
               className="logo"
             />
-          
-        </div>
-
-        
+        </div>        
       </div>
-      <p className="info_description">
+      <p className="info_description" onClick={handleClick}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
           finibus gravida ex, sit amet finibus nulla tristique iaculis.{" "}
           <b>Curabitur nec pharetra enim</b>. Sed venenatis tellus non turpis
