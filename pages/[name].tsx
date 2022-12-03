@@ -10,7 +10,9 @@ import { handleResize } from "../src/utils/MobileUtils";
 
 export async function getStaticPaths() {
   const contentfulProjects = await contentfulClient
-    .getEntries("project")
+    .getEntries({
+      content_type: "project",
+    })
     .then((res) => res.items);
   const projects = mapProjects(contentfulProjects);
   const paths = projects.map((project) => ({
