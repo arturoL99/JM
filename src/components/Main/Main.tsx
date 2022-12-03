@@ -7,10 +7,10 @@ import Tiles from "../Tiles/Tiles";
 import logo from "../../images/Logo_White.png";
 
 type Props = {
-  description:any
-}
+  description: any;
+};
 
-const Main: FC<Props> = ({description}) => {
+const Main: FC<Props> = ({ description }) => {
   const [open, setOpen] = useState(true);
 
   const handleClick = () => {
@@ -23,19 +23,19 @@ const Main: FC<Props> = ({description}) => {
     <div className="main_container">
       <div className="info">
         <div className="info_title" onClick={handleClick}>
-            <Image
-              src={logo}
-              alt="info"
-              height={60}
-              width={400}
-              loading="lazy"
-              className="logo"
-            />
-        </div>        
+          <Image
+            src={logo}
+            alt="info"
+            height={60}
+            width={400}
+            loading="lazy"
+            className="logo"
+          />
+        </div>
       </div>
       <div className="info_description" onClick={handleClick}>
-      {documentToReactComponents(description.description)}
-        </div>
+        {documentToReactComponents(description.description)}
+      </div>
       <Shapes />
       <Tiles />
     </div>
