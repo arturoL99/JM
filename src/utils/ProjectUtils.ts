@@ -3,6 +3,7 @@ import { ContentfulImg } from "../types/ContentfulImg";
 import { Project } from "../types/Project";
 
 export const mapProjects = (contentfulProjects: any[]) => {
+  if(contentfulProjects){
   const projects: Project[] = [];
   const photos: ContentfulImg[] = [];
   contentfulProjects.map((contentfulProject) => {
@@ -28,9 +29,23 @@ export const mapProjects = (contentfulProjects: any[]) => {
     projects.push(project);
   });
   return projects;
+}else{
+  const projects: Project[] = [{
+    name: "contentfulProject.fields.name",
+    image: {
+      url: "contentfulProject.fields.image.fields.file.url",
+      height: 100,
+      width: 100,
+    },
+    photos: [],
+    description: "contentfulProject.fields.description",
+  }];
+  return projects;
+}
 };
 
 export const mapProject = (contentfulProject: any) => {
+  if(contentfulProject){
   const photos: ContentfulImg[] = [];
   contentfulProject.fields.photos.map((photo: any) => {
     photos.push({
@@ -50,6 +65,20 @@ export const mapProject = (contentfulProject: any) => {
     description: contentfulProject.fields.description,
   };
   return project;
+  }
+  else{
+    const project: Project = {
+      name: "contentfulProject.fields.name",
+      image: {
+        url: "contentfulProject.fields.image.fields.file.url",
+        height: 100,
+        width: 100,
+      },
+      photos: [],
+      description: "contentfulProject.fields.description",
+    };
+    return project;
+  }
 };
 
 export const moveTitle = (open: boolean) => {
