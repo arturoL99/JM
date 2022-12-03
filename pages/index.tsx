@@ -15,13 +15,18 @@ import contactIcon from "../src/images/icons8-contacts.webp";
 
 export async function getStaticProps() {
   const contentfulProjects = await contentfulClient
-    .getEntries("project")
+    .getEntries({
+      content_type: "project",
+    })
     .then((res) => res.items);
   const projects = mapProjects(contentfulProjects);
-  return { props: { projects } };
+  const description = await contentfulClient
+    .getEntry("v0qhkU9OwtvFHxoacUcC7")
+    .then((res) => res.fields);
+  return { props: { projects, description } };
 }
 
-export default function Home(props: { projects: Project[] }) {
+export default function Home(props: { projects: Project[], description:any }) {
   const [active, setActive] = useState("main");
   const [hideTop, setHideTop] = useState(false);
   const [hideBottom, setHideBottom] = useState(false);
@@ -30,7 +35,7 @@ export default function Home(props: { projects: Project[] }) {
     active === "projects" ? setHideTop(true) : setHideTop(false);
     active === "contacts" ? setHideBottom(true) : setHideBottom(false);
   }, [active]);
-console.log(props.projects);
+  console.log(props.projects);
   return (
     <div className="index">
       <Head>
@@ -48,7 +53,7 @@ console.log(props.projects);
         direction={goUp}
       />
 
-      <Main />
+      <Main description={props.description} />
       <Contacts active={active} />
       <Projects active={active} projects={props.projects} />
 

@@ -1,11 +1,16 @@
 import Image from "next/image";
 import { FC, useState } from "react";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { moveInfo } from "../../utils/MainUtils";
 import Shapes from "../Shapes/Shapes";
 import Tiles from "../Tiles/Tiles";
 import logo from "../../images/Logo_White.png";
 
-const Main: FC = () => {
+type Props = {
+  description:any
+}
+
+const Main: FC<Props> = ({description}) => {
   const [open, setOpen] = useState(true);
 
   const handleClick = () => {
@@ -28,17 +33,9 @@ const Main: FC = () => {
             />
         </div>        
       </div>
-      <p className="info_description" onClick={handleClick}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          finibus gravida ex, sit amet finibus nulla tristique iaculis.{" "}
-          <b>Curabitur nec pharetra enim</b>. Sed venenatis tellus non turpis
-          tempor aliquet. Curabitur felis turpis, aliquet eget lacus a, lacinia
-          semper mi. Cras a ipsum vel augue hendrerit molestie. Pellentesque
-          molestie lacus erat. Curabitur id leo arcu. Sed non enim lobortis,
-          sagittis leo id, vestibulum nunc. <b>Nulla imperdiet</b> neque a arcu
-          ultricies tincidunt. Mauris quis nisl fringilla, aliquet lacus sed,
-          fermentum ipsum. Praesent et arcu lorem.
-        </p>
+      <div className="info_description" onClick={handleClick}>
+      {documentToReactComponents(description.description)}
+        </div>
       <Shapes />
       <Tiles />
     </div>
