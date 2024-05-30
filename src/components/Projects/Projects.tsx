@@ -20,6 +20,11 @@ const Projects: FC<Props> = ({ projects, active }) => {
 
   useEffect(() => {
     moveProjectsContainer(active);
+    if(active === "projects"){
+      setTimeout(() => {
+      setOpen(true);
+    }, 2000);
+    }
   }, [active]);
 
   useEffect(() => {
@@ -33,19 +38,19 @@ const Projects: FC<Props> = ({ projects, active }) => {
       <div className="content_container">
         <div className={"projects_title"}>
           <h1 className="title">
-            <span className="hideMobile">I'm such an artist,</span> <br />
-            Look at my{" "}
+            <span className="hideMobile">Evénements</span> <br />
+            faits avec{" "}
             <span className="animate-charcter" onClick={() => setOpen(!open)}>
-              STUFF
+              AMOUR
             </span>
           </h1>
-          <Image
+          {/* <Image
             src={arrow}
             alt="arrow"
             width={30}
             height={30}
             className="projects_arrow"
-          />
+          /> */}
         </div>
         <div className={"projects"}>
           <ProjectsContainer projects={projects} />

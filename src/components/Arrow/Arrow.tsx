@@ -15,6 +15,8 @@ type Props = {
   ) => void;
 };
 
+//posizione icon determinata da icon_container --> aggiungere modo di differenzziare left right (usare prop direction?)--> top 0 piu o meno da provare transform -50%...
+
 const Arrow: FC<Props> = ({
   icon,
   hide,

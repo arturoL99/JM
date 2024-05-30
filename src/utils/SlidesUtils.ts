@@ -33,3 +33,37 @@ export const goDown = (
       break;
   }
 };
+
+export const goRight = (
+  active: string,
+  setActive: Dispatch<SetStateAction<string>>
+) => {
+  switch (active) {
+    case "main":
+      setActive("events");
+      break;
+    case "credits":
+      setActive("main");
+      break;
+    default:
+      setActive("events");
+      break;
+  }
+};
+
+export const goLeft = (
+  active: string,
+  setActive: Dispatch<SetStateAction<string>>
+) => {
+  switch (active) {
+    case "main":
+      setActive("credits");
+      break;
+    case "events":
+      setActive("main");
+      break;
+    default:
+      setActive("credits");
+      break;
+  }
+};

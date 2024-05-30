@@ -47,6 +47,48 @@ export const hoverArrow = (arrowClass: string, hover: boolean) => {
       animationDown.arrow.play();
       animationDown.icon.play();
       break;
+      case "arrow_right":
+        const animationRigth = {
+          icon: anime({
+            targets: `#${arrowClass} .icon_container`,
+            opacity: opacity,
+            right: position,
+            scale: scaleIcon,
+            duration: 1000,
+            elasticity: 500,
+          }),
+          arrow: anime({
+            targets: `#${arrowClass} .${arrowClass}`,
+            scale: scaleArrow,
+            rotate: [90, 90],
+            duration: 500,
+            elasticity: 500,
+          }),
+        };
+        animationRigth.arrow.play();
+        animationRigth.icon.play();
+        break;
+        case "arrow_left":
+        const animationLeft = {
+          icon: anime({
+            targets: `#${arrowClass} .icon_container`,
+            opacity: opacity,
+            left: position,
+            scale: scaleIcon,
+            duration: 1000,
+            elasticity: 500,
+          }),
+          arrow: anime({
+            targets: `#${arrowClass} .${arrowClass}`,
+            scale: scaleArrow,
+            rotate: [270, 270],
+            duration: 500,
+            elasticity: 500,
+          }),
+        };
+        animationLeft.arrow.play();
+        animationLeft.icon.play();
+        break;
   }
 };
 

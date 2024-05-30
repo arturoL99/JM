@@ -27,7 +27,7 @@ const Contacts: FC<Props> = ({ active }) => {
         <h1 className="title">
           Discover the power of{" "}
           <span className="animate-charcter" onClick={() => setOpen(!open)}>
-            JEAN
+            PHENOTYPE
           </span>
         </h1>
 

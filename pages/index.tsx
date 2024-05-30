@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Main from "../src/components/Main/Main";
-import { goUp, goDown } from "../src/utils/SlidesUtils";
+import { goUp, goDown, goRight, goLeft } from "../src/utils/SlidesUtils";
 import Contacts from "../src/components/Contact/Contacts";
 import Projects from "../src/components/Projects/Projects";
 import { ToastContainer } from "react-toastify";
@@ -12,6 +12,7 @@ import { Project } from "../src/types/Project";
 import Arrow from "../src/components/Arrow/Arrow";
 import projectIcon from "../src/images/icons8-projects.webp";
 import contactIcon from "../src/images/icons8-contacts.webp";
+import Events from "../src/components/Events/Events";
 
 export async function getStaticProps() {
   const contentfulProjects = await contentfulClient
@@ -35,7 +36,7 @@ export default function Home(props: { projects: Project[], description:any }) {
     active === "projects" ? setHideTop(true) : setHideTop(false);
     active === "contacts" ? setHideBottom(true) : setHideBottom(false);
   }, [active]);
-  console.log(props.projects);
+
   return (
     <div className="index">
       <Head>
@@ -53,9 +54,28 @@ export default function Home(props: { projects: Project[], description:any }) {
         direction={goUp}
       />
 
+      <Arrow
+        icon={projectIcon}
+        hide={hideTop}
+        active={active}
+        setActive={setActive}
+        arrowClass="arrow_right"
+        direction={goRight}
+      />
+
       <Main description={props.description} />
       <Contacts active={active} />
       <Projects active={active} projects={props.projects} />
+      <Events active={active} />
+
+      <Arrow
+        icon={projectIcon}
+        hide={hideTop}
+        active={active}
+        setActive={setActive}
+        arrowClass="arrow_left"
+        direction={goLeft}
+      />
 
       <Arrow
         hide={hideBottom}
@@ -65,6 +85,8 @@ export default function Home(props: { projects: Project[], description:any }) {
         setActive={setActive}
         direction={goDown}
       />
+
+
 
       <ToastContainer
         position="top-right"

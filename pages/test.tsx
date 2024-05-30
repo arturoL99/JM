@@ -9,18 +9,8 @@ export default function Test() {
   const target = useRef(null);
 
   return (
-    <ParallaxProvider>
-
-				<div id="test">
-					<h1>Disable React-Scroll-Parallax on mobile</h1>
-					<h3>(resize the window to see it in action)</h3>
-					<Parallax
-						speed={-23}
-            className="test"
-						>
-						<h3>With Methods</h3>
-					</Parallax>
-				</div>
-			</ParallaxProvider>
+    <section className="calendar_container">
+		<h1>Prochains Evenements</h1>
+	</section>
   );
 }
