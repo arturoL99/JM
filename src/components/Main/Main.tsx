@@ -14,7 +14,6 @@ const Main: FC<Props> = ({ description }) => {
   const [open, setOpen] = useState(true);
 
   const handleClick = () => {
-    console.log(open);
     moveInfo(open);
     setOpen(!open);
   };

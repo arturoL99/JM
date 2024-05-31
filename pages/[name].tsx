@@ -36,9 +36,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 const ProjectPage = (props: { project: Project }) => {
-  console.log(props.project);
   const [mobile, setMobile] = useState<boolean>();
-  console.log(mobile);
   useEffect(() => {
     handleResize(setMobile);
 }, []);

@@ -52,7 +52,6 @@ export const createGrid = (wrapper: HTMLElement | null) => {
 
     wrapper.style.setProperty("--columns", `${columns}`);
     wrapper.style.setProperty("--rows", `${rows}`);
-    console.log(columns, rows);
     const tiles = columns * rows;
     createTiles(wrapper, tiles, columns, rows);
   }

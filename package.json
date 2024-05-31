@@ -11,6 +11,11 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
     "@emailjs/browser": "^3.9.1",
+    "@fullcalendar/core": "^6.1.13",
+    "@fullcalendar/daygrid": "^6.1.13",
+    "@fullcalendar/interaction": "^6.1.13",
+    "@fullcalendar/react": "^6.1.13",
+    "@fullcalendar/timegrid": "^6.1.13",
     "@types/animejs": "^3.1.6",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",

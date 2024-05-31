@@ -1,4 +1,5 @@
 import anime from "animejs";
+import { SetStateAction } from "react";
 
 export const hoverArrow = (arrowClass: string, hover: boolean) => {
   const opacity = hover ? [0, 1] : [1, 0];
@@ -47,48 +48,48 @@ export const hoverArrow = (arrowClass: string, hover: boolean) => {
       animationDown.arrow.play();
       animationDown.icon.play();
       break;
-      case "arrow_right":
-        const animationRigth = {
-          icon: anime({
-            targets: `#${arrowClass} .icon_container`,
-            opacity: opacity,
-            right: position,
-            scale: scaleIcon,
-            duration: 1000,
-            elasticity: 500,
-          }),
-          arrow: anime({
-            targets: `#${arrowClass} .${arrowClass}`,
-            scale: scaleArrow,
-            rotate: [90, 90],
-            duration: 500,
-            elasticity: 500,
-          }),
-        };
-        animationRigth.arrow.play();
-        animationRigth.icon.play();
-        break;
-        case "arrow_left":
-        const animationLeft = {
-          icon: anime({
-            targets: `#${arrowClass} .icon_container`,
-            opacity: opacity,
-            left: position,
-            scale: scaleIcon,
-            duration: 1000,
-            elasticity: 500,
-          }),
-          arrow: anime({
-            targets: `#${arrowClass} .${arrowClass}`,
-            scale: scaleArrow,
-            rotate: [270, 270],
-            duration: 500,
-            elasticity: 500,
-          }),
-        };
-        animationLeft.arrow.play();
-        animationLeft.icon.play();
-        break;
+    case "arrow_right":
+      const animationRigth = {
+        icon: anime({
+          targets: `#${arrowClass} .icon_container`,
+          opacity: opacity,
+          right: position,
+          scale: scaleIcon,
+          duration: 1000,
+          elasticity: 500,
+        }),
+        arrow: anime({
+          targets: `#${arrowClass} .${arrowClass}`,
+          scale: scaleArrow,
+          rotate: [90, 90],
+          duration: 500,
+          elasticity: 500,
+        }),
+      };
+      animationRigth.arrow.play();
+      animationRigth.icon.play();
+      break;
+    case "arrow_left":
+      const animationLeft = {
+        icon: anime({
+          targets: `#${arrowClass} .icon_container`,
+          opacity: opacity,
+          left: position,
+          scale: scaleIcon,
+          duration: 1000,
+          elasticity: 500,
+        }),
+        arrow: anime({
+          targets: `#${arrowClass} .${arrowClass}`,
+          scale: scaleArrow,
+          rotate: [270, 270],
+          duration: 500,
+          elasticity: 500,
+        }),
+      };
+      animationLeft.arrow.play();
+      animationLeft.icon.play();
+      break;
   }
 };
 
@@ -114,3 +115,34 @@ export const aniTest = (
     elasticity: 400,
   });
 };
+
+export const handleArrows = (
+  active: string,
+  setHideTop: (value: SetStateAction<boolean>) => void,
+  setHideBottom: (value: SetStateAction<boolean>) => void,
+  setHideRight: (value: SetStateAction<boolean>) => void,
+  setHideLeft: (value: SetStateAction<boolean>) => void) => {
+  switch (active) {
+    case "main":
+      setHideTop(false);
+      setHideBottom(false);
+      setHideRight(false);
+      setHideLeft(false);
+      break;
+    case "projects":
+      setHideTop(true);
+      setHideRight(true);
+      setHideLeft(true);
+      break;
+    case "contacts":
+      setHideBottom(true);
+      setHideRight(true);
+      setHideLeft(true);
+      break;
+    case "events":
+      setHideRight(true);
+      setHideTop(true);
+      setHideBottom(true);
+      break;
+  }
+}

@@ -12,6 +12,7 @@ import "../src/components/Arrow/arrow.scss";
 import "../src/components/Navbar/Navbar.scss";
 import "../src/components/Photos/Photos.scss";
 import "../src/components/Title/Title.scss";
+import "../src/components/Calendar/Calendar.scss";
 import "../styles/test.scss";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";

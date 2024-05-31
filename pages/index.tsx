@@ -13,6 +13,7 @@ import Arrow from "../src/components/Arrow/Arrow";
 import projectIcon from "../src/images/icons8-projects.webp";
 import contactIcon from "../src/images/icons8-contacts.webp";
 import Events from "../src/components/Events/Events";
+import { handleArrows } from "../src/utils/AnimeUtils";
 
 export async function getStaticProps() {
   const contentfulProjects = await contentfulClient
@@ -31,10 +32,11 @@ export default function Home(props: { projects: Project[], description:any }) {
   const [active, setActive] = useState("main");
   const [hideTop, setHideTop] = useState(false);
   const [hideBottom, setHideBottom] = useState(false);
+  const [hideLeft, setHideLeft] = useState(false);
+  const [hideRight, setHideRight] = useState(false);
 
   useEffect(() => {
-    active === "projects" ? setHideTop(true) : setHideTop(false);
-    active === "contacts" ? setHideBottom(true) : setHideBottom(false);
+    handleArrows(active, setHideTop, setHideBottom, setHideRight, setHideLeft);
   }, [active]);
 
   return (
@@ -56,7 +58,7 @@ export default function Home(props: { projects: Project[], description:any }) {
 
       <Arrow
         icon={projectIcon}
-        hide={hideTop}
+        hide={hideRight}
         active={active}
         setActive={setActive}
         arrowClass="arrow_right"
@@ -70,7 +72,7 @@ export default function Home(props: { projects: Project[], description:any }) {
 
       <Arrow
         icon={projectIcon}
-        hide={hideTop}
+        hide={hideLeft}
         active={active}
         setActive={setActive}
         arrowClass="arrow_left"

@@ -26,7 +26,6 @@ const Arrow: FC<Props> = ({
   setActive
 }) => {
   const [hover, setHover] = useState(false);
-
   useEffect(() => {
     hoverArrow(arrowClass, hover);
   }, [hover]);
