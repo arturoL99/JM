@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { ShapeCombinations } from "../../types/ShapeCombinations";
 import { possibleCombinations, uniqueRand } from "../../utils/ShapesUtils";
+import { ContentfulImg } from "../../types/ContentfulImg";
 
-const Shapes = () => {
+type Props = {
+  photos: ContentfulImg[];
+};
+
+const Shapes: FC<Props> = ({ photos }) => {
   const [combinations, setCombinations] = useState<ShapeCombinations>(
-    possibleCombinations[0] 
+    possibleCombinations[0]
   );
   const [prev, setPrev] = useState(0);
 
@@ -29,13 +34,34 @@ const Shapes = () => {
       data-configuration={combinations.configuration}
       data-roundness={combinations.roundness}
     >
-      <div className="shape"></div>
-      <div className="shape"></div>
-      <div className="shape"></div>
-      <div className="shape"></div>
-      <div className="shape"></div>
-      <div className="shape"></div>
-      <div className="shape"></div>
+      <div className="shape"
+        style={{
+          backgroundImage: `url(${photos[0].url})`
+        }}></div>
+      <div className="shape"
+        style={{
+          backgroundImage: `url(${photos[1].url})`
+        }}></div>
+      <div className="shape"
+        style={{
+          backgroundImage: `url(${photos[2].url})`
+        }}></div>
+      <div className="shape"
+        style={{
+          backgroundImage: `url(${photos[3].url})`
+        }}></div>
+      <div className="shape"
+        style={{
+          backgroundImage: `url(${photos[4].url})`
+        }}></div>
+      <div className="shape"
+        style={{
+          backgroundImage: `url(${photos[5].url})`
+        }}></div>
+      <div className="shape"
+        style={{
+          backgroundImage: `url(${photos[6].url})`
+        }}></div>
     </section>
   );
 };

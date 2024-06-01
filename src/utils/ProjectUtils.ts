@@ -3,11 +3,50 @@ import { ContentfulImg } from "../types/ContentfulImg";
 import { Project } from "../types/Project";
 
 export const mapProjects = (contentfulProjects: any[]) => {
-  if(contentfulProjects){
-  const projects: Project[] = [];
-  const photos: ContentfulImg[] = [];
-  contentfulProjects.map((contentfulProject) => {
-    if(contentfulProject.fields.photos){
+  if (contentfulProjects) {
+    const projects: Project[] = [];
+    const photos: ContentfulImg[] = [];
+    contentfulProjects.map((contentfulProject) => {
+      if (contentfulProject.fields.photos) {
+        contentfulProject.fields.photos.map((photo: any) => {
+          photos.push({
+            url: photo.fields.file.url,
+            height: photo.fields.file.details.image.height,
+            width: photo.fields.file.details.image.width,
+          });
+        });
+      }
+      const project: Project = {
+        name: contentfulProject.fields.name,
+        image: {
+          url: contentfulProject.fields.image.fields.file.url,
+          height: contentfulProject.fields.image.fields.file.details.image.height,
+          width: contentfulProject.fields.image.fields.file.details.image.width,
+        },
+        photos: photos || null,
+        description: contentfulProject.fields.description || null,
+      };
+      projects.push(project);
+    });
+    return projects;
+  } else {
+    const projects: Project[] = [{
+      name: "contentfulProject.fields.name",
+      image: {
+        url: "contentfulProject.fields.image.fields.file.url",
+        height: 100,
+        width: 100,
+      },
+      photos: [],
+      description: "contentfulProject.fields.description",
+    }];
+    return projects;
+  }
+};
+
+export const mapProject = (contentfulProject: any) => {
+  if (contentfulProject) {
+    const photos: ContentfulImg[] = [];
     contentfulProject.fields.photos.map((photo: any) => {
       photos.push({
         url: photo.fields.file.url,
@@ -15,7 +54,6 @@ export const mapProjects = (contentfulProjects: any[]) => {
         width: photo.fields.file.details.image.width,
       });
     });
-  }
     const project: Project = {
       name: contentfulProject.fields.name,
       image: {
@@ -23,50 +61,12 @@ export const mapProjects = (contentfulProjects: any[]) => {
         height: contentfulProject.fields.image.fields.file.details.image.height,
         width: contentfulProject.fields.image.fields.file.details.image.width,
       },
-      photos: photos || null,
-      description: contentfulProject.fields.description || null,
+      photos: photos,
+      description: contentfulProject.fields.description,
     };
-    projects.push(project);
-  });
-  return projects;
-}else{
-  const projects: Project[] = [{
-    name: "contentfulProject.fields.name",
-    image: {
-      url: "contentfulProject.fields.image.fields.file.url",
-      height: 100,
-      width: 100,
-    },
-    photos: [],
-    description: "contentfulProject.fields.description",
-  }];
-  return projects;
-}
-};
-
-export const mapProject = (contentfulProject: any) => {
-  if(contentfulProject){
-  const photos: ContentfulImg[] = [];
-  contentfulProject.fields.photos.map((photo: any) => {
-    photos.push({
-      url: photo.fields.file.url,
-      height: photo.fields.file.details.image.height,
-      width: photo.fields.file.details.image.width,
-    });
-  });
-  const project: Project = {
-    name: contentfulProject.fields.name,
-    image: {
-      url: contentfulProject.fields.image.fields.file.url,
-      height: contentfulProject.fields.image.fields.file.details.image.height,
-      width: contentfulProject.fields.image.fields.file.details.image.width,
-    },
-    photos: photos,
-    description: contentfulProject.fields.description,
-  };
-  return project;
+    return project;
   }
-  else{
+  else {
     const project: Project = {
       name: "contentfulProject.fields.name",
       image: {
@@ -80,6 +80,8 @@ export const mapProject = (contentfulProject: any) => {
     return project;
   }
 };
+
+
 
 export const moveTitle = (open: boolean) => {
   const top = open ? "13%" : "50%";
@@ -132,3 +134,18 @@ export const moveProjectsContainer = (active: string) => {
     easing: "linear",
   });
 };
+
+
+export const mapHomePhotos = (contentfulHomePhotos: any[]) => {
+  if (contentfulHomePhotos) {
+    const photos: ContentfulImg[] = [];
+    contentfulHomePhotos.map((photo: any) => {
+      photos.push({
+        url: photo.fields.file.url,
+        height: photo.fields.file.details.image.height,
+        width: photo.fields.file.details.image.width,
+      });
+    });
+    return photos;
+  }else return [];
+}

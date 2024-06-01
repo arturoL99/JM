@@ -7,7 +7,7 @@ import Projects from "../src/components/Projects/Projects";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import contentfulClient from "../src/client/ContentfulClient";
-import { mapProjects } from "../src/utils/ProjectUtils";
+import { mapHomePhotos, mapProjects } from "../src/utils/ProjectUtils";
 import { Project } from "../src/types/Project";
 import Arrow from "../src/components/Arrow/Arrow";
 import projectIcon from "../src/images/icons8-projects.webp";
@@ -22,13 +22,16 @@ export async function getStaticProps() {
     })
     .then((res) => res.items);
   const projects = mapProjects(contentfulProjects);
-  const description = await contentfulClient
-    .getEntry("v0qhkU9OwtvFHxoacUcC7")
-    .then((res) => res.fields);
-  return { props: { projects, description } };
+  const contentfulhomePhotos = await contentfulClient
+    .getEntries({
+      content_type: "homeFoto",
+    })
+    const homePhotos = mapHomePhotos(contentfulhomePhotos.includes.Asset)
+
+  return { props: { projects, homePhotos } };
 }
 
-export default function Home(props: { projects: Project[], description:any }) {
+export default function Home(props: { projects: Project[], homePhotos:any }) {
   const [active, setActive] = useState("main");
   const [hideTop, setHideTop] = useState(false);
   const [hideBottom, setHideBottom] = useState(false);
@@ -38,7 +41,6 @@ export default function Home(props: { projects: Project[], description:any }) {
   useEffect(() => {
     handleArrows(active, setHideTop, setHideBottom, setHideRight, setHideLeft);
   }, [active]);
-
   return (
     <div className="index">
       <Head>
@@ -65,7 +67,7 @@ export default function Home(props: { projects: Project[], description:any }) {
         direction={goRight}
       />
 
-      <Main description={props.description} />
+      <Main photos={props.homePhotos} />
       <Contacts active={active} />
       <Projects active={active} projects={props.projects} />
       <Events active={active} />

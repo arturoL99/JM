@@ -10,6 +10,7 @@ body {
   color: $light;
   background: $black;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {

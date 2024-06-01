@@ -1,16 +1,17 @@
 import Image from "next/image";
 import { FC, useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { moveInfo } from "../../utils/MainUtils";
 import Shapes from "../Shapes/Shapes";
 import Tiles from "../Tiles/Tiles";
 import logo from "../../images/Logo_White.png";
+import { ContentfulImg } from "../../types/ContentfulImg";
+import { moveInfo } from "../../utils/MainUtils";
 
 type Props = {
-  description: any;
+  photos: ContentfulImg[];
 };
 
-const Main: FC<Props> = ({ description }) => {
+const Main: FC<Props> = ({ photos }) => {
   const [open, setOpen] = useState(true);
 
   const handleClick = () => {
@@ -21,7 +22,7 @@ const Main: FC<Props> = ({ description }) => {
   return (
     <div className="main_container">
       <div className="info">
-        <div className="info_title" onClick={handleClick}>
+        <div className="info_title">
           <Image
             src={logo}
             alt="info"
@@ -32,10 +33,10 @@ const Main: FC<Props> = ({ description }) => {
           />
         </div>
       </div>
-      <div className="info_description" onClick={handleClick}>
+      {/* <div className="info_description" onClick={handleClick}>
         {documentToReactComponents(description.description)}
-      </div>
-      <Shapes />
+      </div> */}
+      <Shapes photos={photos}/>
       <Tiles />
     </div>
   );

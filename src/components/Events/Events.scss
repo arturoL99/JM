@@ -9,6 +9,15 @@
         right: -100vw;
         z-index: 99;
         color: $dark;
+        display: flex;
+        justify-content: space-between;
     }
 }
 
+.event{
+    &_container{
+        z-index: 100;
+        background-color: $light;
+        padding: 5%;
+    }
+}

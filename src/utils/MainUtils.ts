@@ -1,13 +1,13 @@
 import anime from "animejs";
 
 export const moveInfo = (open: boolean) => {
-  const animation = anime({
-    targets: ".info_description",
-    opacity: open ? 1 : 0,
-    zIndex: open ? 90 : -10,
-    duration: 1000,
-    easing: "linear",
-  });
+  // const animation = anime({
+  //   targets: ".info_description",
+  //   opacity: open ? 1 : 0,
+  //   zIndex: open ? 90 : -10,
+  //   duration: 1000,
+  //   easing: "linear",
+  // });
 
   const aniTitle = anime({
     targets: ".info_title",
@@ -16,6 +16,6 @@ export const moveInfo = (open: boolean) => {
     easing: "linear",
   });
 
-  animation.play();
+  // animation.play();
   aniTitle.play();
 };

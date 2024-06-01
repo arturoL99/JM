@@ -16,10 +16,10 @@ const Events: FC<Props> = ({ active }) => {
 
   return (
     <section id="events" className={`events_container`}>
-      <Calendar />
       <div className="event_container">
-        
+        <h1>Evento</h1>
       </div>
+      <Calendar open={open} setOpen={setOpen} />
     </section>
   );
 };
