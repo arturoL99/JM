@@ -15,9 +15,17 @@
 }
 
 .event{
+    width: 60vw;
     &_container{
-        z-index: 100;
         background-color: $light;
         padding: 5%;
+        width: 70%;
+        transition: all 500ms ease-in-out;
+        display: flex;
+        justify-content: center;
     }
+}
+
+.expanded{
+    width: 100%;
 }

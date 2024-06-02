@@ -14,6 +14,8 @@ import projectIcon from "../src/images/icons8-projects.webp";
 import contactIcon from "../src/images/icons8-contacts.webp";
 import Events from "../src/components/Events/Events";
 import { handleArrows } from "../src/utils/AnimeUtils";
+import { mapEvents } from "../src/utils/EventsUtils";
+import { Event } from "../src/types/Event";
 
 export async function getStaticProps() {
   const contentfulProjects = await contentfulClient
@@ -22,22 +24,30 @@ export async function getStaticProps() {
     })
     .then((res) => res.items);
   const projects = mapProjects(contentfulProjects);
+
   const contentfulhomePhotos = await contentfulClient
     .getEntries({
       content_type: "homeFoto",
     })
-    const homePhotos = mapHomePhotos(contentfulhomePhotos.includes.Asset)
+  const homePhotos = mapHomePhotos(contentfulhomePhotos.includes.Asset)
 
-  return { props: { projects, homePhotos } };
+  const contentfulEvents = await contentfulClient
+    .getEntries({
+      content_type: "event",
+    })
+    .then((res) => res.items);
+  const events = mapEvents(contentfulEvents);
+
+  return { props: { projects, homePhotos, events } };
 }
 
-export default function Home(props: { projects: Project[], homePhotos:any }) {
+export default function Home(props: { projects: Project[], events:Event[], homePhotos: any }) {
   const [active, setActive] = useState("main");
   const [hideTop, setHideTop] = useState(false);
   const [hideBottom, setHideBottom] = useState(false);
   const [hideLeft, setHideLeft] = useState(false);
   const [hideRight, setHideRight] = useState(false);
-
+  
   useEffect(() => {
     handleArrows(active, setHideTop, setHideBottom, setHideRight, setHideLeft);
   }, [active]);
@@ -70,7 +80,7 @@ export default function Home(props: { projects: Project[], homePhotos:any }) {
       <Main photos={props.homePhotos} />
       <Contacts active={active} />
       <Projects active={active} projects={props.projects} />
-      <Events active={active} />
+      <Events active={active} eventsProps={props.events} />
 
       <Arrow
         icon={projectIcon}

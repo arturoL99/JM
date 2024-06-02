@@ -10,7 +10,10 @@ body {
   color: $light;
   background: $black;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow: hidden;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
 }
 
 a {
