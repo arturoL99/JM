@@ -6,6 +6,7 @@ export const hoverArrow = (arrowClass: string, hover: boolean) => {
   const scaleIcon = hover ? [0.5, 1] : [1, 0.5];
   const scaleArrow = hover ? [1, 1.3] : [1.3, 1];
   const position = hover ? [-50, 40] : [40, -50];
+  const positionY = hover ? [-5, -5] : [-5, -5];
   switch (arrowClass) {
     case "arrow_up":
       const animation = {
@@ -53,6 +54,7 @@ export const hoverArrow = (arrowClass: string, hover: boolean) => {
         icon: anime({
           targets: `#${arrowClass} .icon_container`,
           opacity: opacity,
+          top: positionY,
           right: position,
           scale: scaleIcon,
           duration: 1000,
@@ -74,6 +76,7 @@ export const hoverArrow = (arrowClass: string, hover: boolean) => {
         icon: anime({
           targets: `#${arrowClass} .icon_container`,
           opacity: opacity,
+          top: positionY,
           left: position,
           scale: scaleIcon,
           duration: 1000,

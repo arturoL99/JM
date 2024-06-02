@@ -14,18 +14,24 @@
     }
 }
 
-.event{
+.event {
     width: 60vw;
-    &_container{
+
+    @media(max-width: 950px) {
+        width: 70vw;
+    }
+
+    &_container {
         background-color: $light;
         padding: 5%;
         width: 70%;
         transition: all 500ms ease-in-out;
         display: flex;
         justify-content: center;
+        overflow-y: auto;
     }
 }
 
-.expanded{
+.expanded {
     width: 100%;
 }
