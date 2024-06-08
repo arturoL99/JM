@@ -1,8 +1,8 @@
 export type Event = {
   title: string;
   paragraphe1: any;
-  startDate: any;
-  endDate: any;
+  start: any;
+  end: any;
   fullAccess: string;
   fullAccessUrl: string;
   concert: string;

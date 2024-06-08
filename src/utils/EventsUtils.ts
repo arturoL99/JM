@@ -18,8 +18,8 @@ export const mapEvents = (contentfulEvents: any[]) => {
       const event: Event = {
         title: contentfulEvent.fields.title,
         paragraphe1: contentfulEvent.fields.paragraphe1 || null,
-        startDate: contentfulEvent.fields.startDate,
-        endDate: contentfulEvent.fields.endDate,
+        start: contentfulEvent.fields.startDate,
+        end: contentfulEvent.fields.endDate,
         fullAccess: contentfulEvent.fields.fullAccess,
         fullAccessUrl: contentfulEvent.fields.fullAccessUrl,
         atelier: contentfulEvent.fields.atelier,
@@ -38,8 +38,8 @@ export const mapEvents = (contentfulEvents: any[]) => {
     const event: Event[] = [{
       title: "contentfulEvent.fields.title",
       paragraphe1: "contentfulEvent.fields.paragraphe1 || null",
-      startDate: "contentfulEvent.fields.startDate",
-      endDate: "contentfulEvent.fields.endDate",
+      start: "contentfulEvent.fields.startDate",
+      end: "contentfulEvent.fields.endDate",
       fullAccess: "contentfulEvent.fields.fullAccess",
       fullAccessUrl: "contentfulEvent.fields.fullAccessUrl",
       atelier: "contentfulEvent.fields.atelier",

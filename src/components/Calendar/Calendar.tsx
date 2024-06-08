@@ -1,19 +1,23 @@
 "use client"
 import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
-import { moveEventsContainer } from "../../utils/EventsUtils";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import interactionPlugin, { Draggable, DropArg } from "@fullcalendar/interaction";
+import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import Image from "next/image";
+import { Event } from "../../types/Event";
+import { findFirstEvent, handleEventClick } from "../../utils/CalendarUtils";
 
 type Props = {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
+    events: Event[];
+    activeEvent: Event;
+    setActiveEvent: Dispatch<SetStateAction<Event>>;
 };
 
-const Calendar: FC<Props> = ({ open, setOpen }) => {
-    return (
+const Calendar: FC<Props> = ({ open, setOpen, events, activeEvent, setActiveEvent }) => {
+        return (
         <div className={open ? "calendar_container" : "calendar_container closed"}>
             <FullCalendar
                 plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
@@ -22,14 +26,13 @@ const Calendar: FC<Props> = ({ open, setOpen }) => {
                     center: "",
                     right: "prev, next"
                 }}
-                events={{}}
+                events={events}
                 nowIndicator={true}
                 editable={false}
                 droppable={false}
                 selectable={true}
                 selectMirror={true}
-            // dateClick={}
-            // eventClick={}
+                eventClick={(data) => handleEventClick(data, events, setActiveEvent)}
             />
             <div className="btn_container" onClick={() => setOpen(!open)}>
                 <Image

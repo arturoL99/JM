@@ -3,6 +3,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { moveEventsContainer } from "../../utils/EventsUtils";
 import Calendar from "../Calendar/Calendar";
 import { Event } from "../../types/Event";
+import { findFirstEvent } from "../../utils/CalendarUtils";
 
 
 type Props = {
@@ -13,14 +14,15 @@ type Props = {
 const Events: FC<Props> = ({ active, eventsProps }) => {
   const [open, setOpen] = useState(true);
   const [events, setEvents] = useState<Event[]>(eventsProps)
-  const [activeEvent, setActiveEvent] = useState<Event>();
+  const [activeEvent, setActiveEvent] = useState<Event>(events[0]);
 
   useEffect(() => {
     moveEventsContainer(active);
   }, [active]);
 
   useEffect(() => {
-    setActiveEvent(events[0]);
+    const firstEvent = findFirstEvent(events);
+    if(firstEvent) setActiveEvent(firstEvent);
   }, [events]);
 
   if (!activeEvent) return <></>
@@ -42,7 +44,7 @@ const Events: FC<Props> = ({ active, eventsProps }) => {
           </div>
         </div>
       </div>
-      <Calendar open={open} setOpen={setOpen} />
+      <Calendar open={open} setOpen={setOpen} events={events} activeEvent={activeEvent} setActiveEvent={setActiveEvent} />
     </section>
   );
 };
