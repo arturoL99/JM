@@ -87,3 +87,36 @@ a {
     }
   }
 }
+
+.btn_light{
+  display: inline-block;
+  color: $dark;
+  padding: 16px 24px;
+  background: $light;
+  cursor: pointer;
+  font-size: .75rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+  border-radius: 5px;
+}
+
+.btn_dark{
+  display: inline-block;
+  color: $light;
+  padding: 16px 24px;
+  background: $black;
+  cursor: pointer;
+  font-size: .75rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+  border-radius: 5px;
+  transition: 300ms ease-in-out;
+}
+
+.btn_dark:hover{
+  transform: scale(0.97);
+}
