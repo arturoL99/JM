@@ -6,17 +6,16 @@ import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import Image from "next/image";
 import { Event } from "../../types/Event";
-import { findFirstEvent, handleEventClick } from "../../utils/CalendarUtils";
+import { handleEventClick } from "../../utils/CalendarUtils";
 
 type Props = {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
     events: Event[];
-    activeEvent: Event;
     setActiveEvent: Dispatch<SetStateAction<Event>>;
 };
 
-const Calendar: FC<Props> = ({ open, setOpen, events, activeEvent, setActiveEvent }) => {
+const Calendar: FC<Props> = ({ open, setOpen, events, setActiveEvent }) => {
         return (
         <div className={open ? "calendar_container" : "calendar_container closed"}>
             <FullCalendar

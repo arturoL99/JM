@@ -33,18 +33,18 @@ const Events: FC<Props> = ({ active, eventsProps }) => {
           <h1>{activeEvent.title}</h1>
           <span>{documentToReactComponents(activeEvent.paragraphe1)}</span>
           <div className="tickets">
-            <h3>TICKETS</h3>
-            <div className="cta">
-              <a href={activeEvent.fullAccessUrl} className="btn_dark">{activeEvent.fullAccess}</a>
-              <a href={activeEvent.atelierUrl} className="btn_dark">{activeEvent.atelier}</a>
-              <a href={activeEvent.concertUrl} className="btn_dark">{activeEvent.concert}</a>
-              <a href={activeEvent.conferenceUrl} className="btn_dark">{activeEvent.conference}</a>
-              <a href={activeEvent.filmUrl} className="btn_dark">{activeEvent.film}</a>
+            <h3>Tickets</h3>
+            <div className="cta mb-50">
+              <a href={activeEvent.fullAccess.url} className="btn_dark">{activeEvent.fullAccess.name}</a>
+              {activeEvent.atelier ? <a href={activeEvent.atelier.url} className="btn_dark">{activeEvent.atelier.name}</a> : <></> }
+              {activeEvent.concert ? <a href={activeEvent.concert.url} className="btn_dark">{activeEvent.concert.name}</a> : <></> }
+              {activeEvent.conference ? <a href={activeEvent.conference.url} className="btn_dark">{activeEvent.conference.name}</a> : <></> }
+              {activeEvent.film ? <a href={activeEvent.film.url} className="btn_dark">{activeEvent.film.name}</a> : <></> }
             </div>
           </div>
-        </div>
+        </div>  
       </div>
-      <Calendar open={open} setOpen={setOpen} events={events} activeEvent={activeEvent} setActiveEvent={setActiveEvent} />
+      <Calendar open={open} setOpen={setOpen} events={events} setActiveEvent={setActiveEvent} />
     </section>
   );
 };

@@ -21,35 +21,29 @@ export const mapEvents = (contentfulEvents: any[]) => {
         start: contentfulEvent.fields.startDate,
         end: contentfulEvent.fields.endDate,
         fullAccess: contentfulEvent.fields.fullAccess,
-        fullAccessUrl: contentfulEvent.fields.fullAccessUrl,
-        atelier: contentfulEvent.fields.atelier,
-        atelierUrl: contentfulEvent.fields.atelierUrl,
-        concert: contentfulEvent.fields.concert,
-        concertUrl: contentfulEvent.fields.concertUrl,
-        conference: contentfulEvent.fields.concert,
-        conferenceUrl: contentfulEvent.fields.concertUrl,
-        film: contentfulEvent.fields.film,
-        filmUrl: contentfulEvent.fields.filmUrl
+        atelier: contentfulEvent.fields.atelier || null,
+        concert: contentfulEvent.fields.concert || null,
+        conference: contentfulEvent.fields.conference || null,
+        film: contentfulEvent.fields.film || null,
       };
       events.push(event);
     });
     return events;
   } else {
+    const cta = {
+      name:"name",
+      url:"url",
+    };
     const event: Event[] = [{
       title: "contentfulEvent.fields.title",
       paragraphe1: "contentfulEvent.fields.paragraphe1 || null",
       start: "contentfulEvent.fields.startDate",
       end: "contentfulEvent.fields.endDate",
-      fullAccess: "contentfulEvent.fields.fullAccess",
-      fullAccessUrl: "contentfulEvent.fields.fullAccessUrl",
-      atelier: "contentfulEvent.fields.atelier",
-      atelierUrl: "contentfulEvent.fields.atelierUrl",
-      concert: "contentfulEvent.fields.concert",
-      concertUrl: "contentfulEvent.fields.concertUrl",
-      conference: "contentfulEvent.fields.concert",
-      conferenceUrl: "contentfulEvent.fields.concertUrl",
-      film: "contentfulEvent.fields.film",
-      filmUrl: "contentfulEvent.fields.filmUrl"
+      fullAccess: cta,
+      atelier: cta,
+      concert: cta,
+      conference: cta,
+      film: cta,
     }];
     return event;
   }

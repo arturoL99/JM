@@ -3,14 +3,14 @@ export type Event = {
   paragraphe1: any;
   start: any;
   end: any;
-  fullAccess: string;
-  fullAccessUrl: string;
-  concert: string;
-  concertUrl: string;
-  film: string;
-  filmUrl: string;
-  conference: string;
-  conferenceUrl: string;
-  atelier: string;
-  atelierUrl: string;
+  fullAccess: EventCTA;
+  concert?: EventCTA;
+  film?: EventCTA;
+  conference?: EventCTA;
+  atelier?: EventCTA;
 };
+
+export type EventCTA = {
+  name: string;
+  url: string;
+}

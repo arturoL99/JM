@@ -45,7 +45,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin: 10px 0;
   }
 }
 
@@ -54,4 +53,37 @@
     background: $black;
     border-radius: 5px;
   }
+}
+
+.fc-event {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $black;
+  color: $light;
+  border: none;
+  padding: 10px 0;
+  transition: 300ms ease-in-out;
+}
+
+.fc-event-time,
+.fc-daygrid-event-dot {
+  display: none;
+}
+
+.fc-event:hover {
+  transform: scale(0.97);
+}
+
+.fc-daygrid-dot-event {
+  .fc-event-title {
+    font-weight: 500;
+    padding: 1px 5px;
+    color: $light;
+  }
+}
+
+.fc-daygrid-dot-event:hover {
+  background-color: $black;
 }

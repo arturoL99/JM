@@ -10,10 +10,10 @@ body {
   color: $light;
   background: $black;
   scroll-behavior: smooth;
-  overflow: hidden;
-  min-width: 100vw;
-  min-height: 100vh;
-  position: absolute;
+  // overflow: hidden;
+  // min-width: 100vw;
+  // min-height: 100vh;
+  // position: absolute;
 }
 
 a {
@@ -119,4 +119,12 @@ a {
 
 .btn_dark:hover{
   transform: scale(0.97);
+}
+
+.my-50{
+  margin: 50px 0;
+}
+
+.mb-50{
+  margin-bottom: 50px;
 }
