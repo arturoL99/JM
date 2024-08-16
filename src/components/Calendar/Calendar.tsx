@@ -12,7 +12,7 @@ type Props = {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
     events: Event[];
-    setActiveEvent: Dispatch<SetStateAction<Event>>;
+    setActiveEvent: Dispatch<SetStateAction<Event | undefined>>;
 };
 
 const Calendar: FC<Props> = ({ open, setOpen, events, setActiveEvent }) => {

@@ -54,9 +54,10 @@ export default function Home(props: { projects: Project[], events: Event[], home
   const [hideBottom, setHideBottom] = useState(false);
   const [hideLeft, setHideLeft] = useState(false);
   const [hideRight, setHideRight] = useState(false);
-  console.log(props.aboutUs);
+
   useEffect(() => {
     handleArrows(active, setHideTop, setHideBottom, setHideRight, setHideLeft);
+    
   }, [active]);
   return (
     <div className="index">
