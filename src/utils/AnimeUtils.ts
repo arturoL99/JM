@@ -147,5 +147,10 @@ export const handleArrows = (
       setHideTop(true);
       setHideBottom(true);
       break;
+    case "aboutUs":
+      setHideLeft(true);
+      setHideTop(true);
+      setHideBottom(true);
+      break;
   }
 }

@@ -16,6 +16,7 @@ import Events from "../src/components/Events/Events";
 import { handleArrows } from "../src/utils/AnimeUtils";
 import { mapEvents } from "../src/utils/EventsUtils";
 import { Event } from "../src/types/Event";
+import AboutUs from "../src/components/AboutUs/AboutUs";
 
 export async function getStaticProps() {
   const contentfulProjects = await contentfulClient
@@ -37,16 +38,23 @@ export async function getStaticProps() {
     })
     .then((res) => res.items);
   const events = mapEvents(contentfulEvents);
-  return { props: { projects, homePhotos, events } };
+
+  const aboutUs = await contentfulClient
+    .getEntries({
+      content_type: "aboutUs",
+    })
+    .then((res) => res.items);
+
+  return { props: { projects, homePhotos, events, aboutUs } };
 }
 
-export default function Home(props: { projects: Project[], events: Event[], homePhotos: any }) {
+export default function Home(props: { projects: Project[], events: Event[], homePhotos: any, aboutUs:any }) {
   const [active, setActive] = useState("main");
   const [hideTop, setHideTop] = useState(false);
   const [hideBottom, setHideBottom] = useState(false);
   const [hideLeft, setHideLeft] = useState(false);
   const [hideRight, setHideRight] = useState(false);
-
+  console.log(props.aboutUs);
   useEffect(() => {
     handleArrows(active, setHideTop, setHideBottom, setHideRight, setHideLeft);
   }, [active]);
@@ -88,6 +96,7 @@ export default function Home(props: { projects: Project[], events: Event[], home
       <Contacts active={active} />
       <Projects active={active} projects={props.projects} />
       <Events active={active} eventsProps={props.events} />
+      <AboutUs active={active} aboutUs={props.aboutUs} />
 
       <Arrow
         icon={projectIcon}

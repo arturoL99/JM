@@ -42,7 +42,7 @@ export const goRight = (
     case "main":
       setActive("events");
       break;
-    case "credits":
+    case "aboutUs":
       setActive("main");
       break;
     default:
@@ -57,13 +57,13 @@ export const goLeft = (
 ) => {
   switch (active) {
     case "main":
-      setActive("credits");
+      setActive("aboutUs");
       break;
     case "events":
       setActive("main");
       break;
     default:
-      setActive("credits");
+      setActive("aboutUs");
       break;
   }
 };

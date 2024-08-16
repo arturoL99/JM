@@ -4,6 +4,7 @@ import "../src/components/Tiles/tiles.scss";
 import "../src/components/Main/main.scss";
 import "../src/components/Contact/contacts.scss";
 import "../src/components/Projects/projects.scss";
+import "../src/components/AboutUs/AboutUs.scss";
 import "../src/components/Events/Events.scss";
 import "../src/components/Contact/modal.scss";
 import "../src/components/Projects/ProjectsContainer.scss";
