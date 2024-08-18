@@ -67,7 +67,7 @@ export default function Home(props: { projects: Project[], events: Event[], home
         {`html, body {
         overflow: hidden;
         min-width: 100vw;
-        min-height: 100vh;
+        min-height: 100dvh;
         position: absolute;
       }`}
       </style>

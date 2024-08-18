@@ -29,7 +29,7 @@
 .photos {
   max-width: 40vw;
   height: auto;
-  max-height: 100vh;
+  max-height: 100dvh;
 
   @media(max-width: 950px){
     max-width: 100%;
