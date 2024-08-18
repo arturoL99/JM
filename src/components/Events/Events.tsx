@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from "react";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { moveEventsContainer } from "../../utils/EventsUtils";
 import Calendar from "../Calendar/Calendar";
 import { Event } from "../../types/Event";

@@ -33,7 +33,7 @@ const Calendar: FC<Props> = ({ open, setOpen, events, setActiveEvent }) => {
                 droppable={false}
                 selectable={true}
                 selectMirror={true}
-                eventClick={(data) => handleEventClick(data, events, setActiveEvent)}
+                eventClick={(data) => handleEventClick(data, events, setOpen, setActiveEvent)}
             />
             <div className={open ? "btn_container" : "btn_container closed"} onClick={() => setOpen(!open)}>
                 <Image
