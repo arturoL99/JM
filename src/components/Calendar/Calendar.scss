@@ -17,16 +17,29 @@
 
     @media(max-width: 950px){
         width: 95%;
-      }
+    }
 
     .btn {
         &_container {
-            position: absolute;
+            position: fixed;
             top: 10px;
-            left: -15px;
+            right: 10px;
             z-index: 101;
             opacity: 1;
             cursor: pointer;
+            transition: all 500ms ease-in-out;
+
+            @media(max-width: 950px){
+                left: 10px;
+            }
+        }
+    }
+
+    .closed{
+        right: calc(100% + 10px);
+
+        @media(max-width: 950px){
+            left: calc(0% - 60px);
         }
     }
 
@@ -50,6 +63,6 @@
     right: -30%;
 
     @media(max-width: 950px){
-        right: -90%;
+        right: -100%;
       }
 }

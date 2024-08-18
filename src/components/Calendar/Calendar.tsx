@@ -1,5 +1,5 @@
 "use client"
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -7,6 +7,8 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import Image from "next/image";
 import { Event } from "../../types/Event";
 import { handleEventClick } from "../../utils/CalendarUtils";
+import closeIcon from "../../images/icons8-close-50.webp";
+import calendarIcon from "../../images/icons8-calendar-50.webp";
 
 type Props = {
     open: boolean;
@@ -33,9 +35,9 @@ const Calendar: FC<Props> = ({ open, setOpen, events, setActiveEvent }) => {
                 selectMirror={true}
                 eventClick={(data) => handleEventClick(data, events, setActiveEvent)}
             />
-            <div className="btn_container" onClick={() => setOpen(!open)}>
+            <div className={open ? "btn_container" : "btn_container closed"} onClick={() => setOpen(!open)}>
                 <Image
-                    src={"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA30lEQVR4nN2UXQrCMBCEPwrt8bSK9Dr6ZtVb+HsjrT89hOizkcD6UtNmmyJCB+al3Z0Jye5A35EAGbAHCuApLORbJjVBGAMlYDy8AaM2whGwVAibChfS68UqQNwIc821mI5M68QTuc+uBmXdw2eexlkLk4nL4NDQMJUarcHWZXDxiLcxsHvyhYdHvAnVPqulMsgDDe6uorNito2SJ5fBTrFARsn1X8Y0Bq6/XDQkFbuIv4ABHoQkqRHOUSCS6G178lwb1x+kyjexCTAkELFMhM0WO9t2GS2PwEb+2Zoe4w06YxsyoVFeqwAAAABJRU5ErkJggg=="}
+                    src={open ? closeIcon : calendarIcon}
                     alt="arrow icon"
                     className=""
                     width={30}

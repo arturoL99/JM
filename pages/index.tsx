@@ -13,7 +13,7 @@ import Arrow from "../src/components/Arrow/Arrow";
 import projectIcon from "../src/images/icons8-projects.webp";
 import contactIcon from "../src/images/icons8-contacts.webp";
 import calendarIcon from "../src/images/icons8-calendar-50.webp";
-import infoIcon from "../src/images/icons8-info-50.webp";
+import infoIcon from "../src/images/info.webp";
 import Events from "../src/components/Events/Events";
 import { handleArrows } from "../src/utils/AnimeUtils";
 import { mapEvents } from "../src/utils/EventsUtils";
