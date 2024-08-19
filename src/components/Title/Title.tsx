@@ -4,6 +4,7 @@ import { Parallax } from "react-scroll-parallax";
 import { Project } from "../../types/Project";
 import Image from "next/image";
 import scroll from "../../images/icons8-scroll.webp";
+import circle from "../../images/P360_Logo_Circle Low_Black.png";
 
 type Props = {
   project: Project;
@@ -11,7 +12,7 @@ type Props = {
 
 const Title: FC<Props> = ({ project }) => {
   return (
-    <div className="title_container">
+    <div id="title_container">
       <Parallax speed={-21} className="text_container">
         <h1 className="title">{project.name}</h1>
         <div className="description">

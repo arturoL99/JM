@@ -7,6 +7,9 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import Title from "../src/components/Title/Title";
 import { useEffect, useState } from "react";
 import { handleResize } from "../src/utils/MobileUtils";
+import logoBlack from "../src/images/P360_Logo_Final_Black.png";
+import logoWhite from "../src/images/P360_Logo_Final_white.png";
+import { StaticImageData } from "next/image";
 
 export async function getStaticPaths() {
   const contentfulProjects = await contentfulClient
@@ -37,13 +40,26 @@ export async function getStaticProps({ params }: any) {
 
 const ProjectPage = (props: { project: Project }) => {
   const [mobile, setMobile] = useState<boolean>();
+  const [currentLogo, setCurrentLogo] = useState<StaticImageData>(logoBlack);
+
   useEffect(() => {
     handleResize(setMobile);
-}, []);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY >= 900 ? setCurrentLogo(logoWhite) : setCurrentLogo(logoBlack);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <ParallaxProvider>
       <section className="project-page">
-        <Navbar />
+        <Navbar currentLogo={currentLogo} />
         <Title project={props.project} />
         <Photos photos={props.project.photos} mobile={mobile} />
       </section>

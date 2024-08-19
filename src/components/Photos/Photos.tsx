@@ -22,6 +22,7 @@ const Photos:FC<Props> = ({photos, mobile}) => {
                   alt="project"
                   className="photos"
                   loading="lazy"
+                  key={i}
                 />
               );
           })}
@@ -37,6 +38,7 @@ const Photos:FC<Props> = ({photos, mobile}) => {
                   alt="project"
                   className="photos"
                   loading="lazy"
+                  key={i}
                 />
               );
           })}

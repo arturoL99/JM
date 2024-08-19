@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Shapes from "../Shapes/Shapes";
 import Tiles from "../Tiles/Tiles";
-import logo from "../../images/Logo_White.png";
+import logo from "../../images/P360_Logo  w_Details_White.png";
 import { ContentfulImg } from "../../types/ContentfulImg";
 import { moveInfo } from "../../utils/MainUtils";
 
