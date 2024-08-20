@@ -6,9 +6,10 @@ import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import Image from "next/image";
 import { Event } from "../../types/Event";
-import { handleEventClick } from "../../utils/CalendarUtils";
+import { handleCalendarIcon, handleEventClick } from "../../utils/CalendarUtils";
 import closeIcon from "../../images/icons8-close-50.webp";
 import calendarIcon from "../../images/icons8-calendar-50.webp";
+import EventDefault from "../Events/EventDefault";
 
 type Props = {
     open: boolean;
@@ -35,7 +36,7 @@ const Calendar: FC<Props> = ({ open, setOpen, events, setActiveEvent }) => {
                 selectMirror={true}
                 eventClick={(data) => handleEventClick(data, events, setOpen, setActiveEvent)}
             />
-            <div className={open ? "btn_container" : "btn_container closed"} onClick={() => setOpen(!open)}>
+            <div className={open ? "btn_container" : "btn_container closed"} onClick={() => handleCalendarIcon(open, setOpen, setActiveEvent)}>
                 <Image
                     src={open ? closeIcon : calendarIcon}
                     alt="arrow icon"
