@@ -12,17 +12,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../../../src/images/blob-scene-haikei.svg");
 
-    @media(max-width: 950px){
+    @media(max-width: 950px) {
         align-items: flex-start;
         overflow-y: auto;
     }
 
-    .aboutUs{
+    .aboutUs {
         width: 70%;
 
-        @media(max-width: 950px){
+        @media(max-width: 950px) {
             width: 95%;
         }
     }
-  }
+}

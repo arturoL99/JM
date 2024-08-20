@@ -22,7 +22,7 @@ const Contacts: FC<Props> = ({ active }) => {
   }, [open]);
 
   return (
-    <section id="contacts" className={`contacts_container`}>
+    <section id="contacts" className={`contacts_container spacer`}>
       <div className="contacts">
         <h1 className="title">
           Discover the power of{" "}

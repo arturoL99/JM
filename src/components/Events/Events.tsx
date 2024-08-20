@@ -26,7 +26,7 @@ console.log(sortedEvents);
 
   return (
     <section id="events" className={`events_container`}>
-      <div className={open ? "event_container" : "event_container expanded"}>
+      <div className={open ? "event_container spacer" : "event_container spacer expanded"}>
         {activeEvent ? <EventTemplate activeEvent={activeEvent} /> : <EventDefault events={events} /> }
       </div>
       <Calendar open={open} setOpen={setOpen} events={events} setActiveEvent={setActiveEvent} />

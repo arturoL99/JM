@@ -34,7 +34,7 @@ const Projects: FC<Props> = ({ projects, active }) => {
   }, [open]);
 
   return (
-    <section id="projects" className={`projects_container`}>
+    <section id="projects" className={`projects_container spacer`}>
       <div className="content_container">
         <div className={"projects_title"}>
           <h1 className="title">

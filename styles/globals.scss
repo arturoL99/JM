@@ -38,7 +38,7 @@ a {
   font-weight: 600;
   margin: 0;
 
-  @media(max-width: 950px){
+  @media(max-width: 950px) {
     font-size: 40px;
     line-height: 3rem;
   }
@@ -48,8 +48,8 @@ a {
   display: none;
 }
 
-.hideMobile{
-  @media(max-width: 950px){
+.hideMobile {
+  @media(max-width: 950px) {
     display: none;
   }
 }
@@ -68,7 +68,7 @@ a {
 .animate-charcter:hover {
   font-size: 65px;
 
-  @media(max-width: 950px){
+  @media(max-width: 950px) {
     font-size: 40px;
   }
 }
@@ -81,6 +81,7 @@ a {
   .boujee-text {
     animation: move-bg 8s linear infinite;
   }
+
   @keyframes move-bg {
     to {
       background-position: 400% 0;
@@ -88,7 +89,7 @@ a {
   }
 }
 
-.btn_light{
+.btn_light {
   display: inline-block;
   color: $dark;
   padding: 16px 24px;
@@ -102,7 +103,7 @@ a {
   border-radius: 5px;
 }
 
-.btn_dark{
+.btn_dark {
   display: inline-block;
   color: $light;
   padding: 16px 24px;
@@ -117,14 +118,22 @@ a {
   transition: 300ms ease-in-out;
 }
 
-.btn_dark:hover{
+.btn_dark:hover {
   transform: scale(0.97);
 }
 
-.my-50{
+.my-50 {
   margin: 50px 0;
 }
 
-.mb-50{
+.mb-50 {
   margin-bottom: 50px;
+}
+
+.spacer {
+  aspect-ratio: 16/9;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
