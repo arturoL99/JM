@@ -23,32 +23,34 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   return (
-    <AnimatePresence exitBeforeEnter>
-      <motion.div
-        key={router.route}
-        initial="initialState"
-        animate="animateState"
-        exit="exitState"
-        transition={{
-          duration: 0.75,
-        }}
-        variants={{
-          initialState: {
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            opacity: 0,
-          },
-          animateState: {
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            opacity: 1,
-          },
-          exitState: {
-            clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
-          },
-        }}
-      >
+    <>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key={router.route}
+          initial="initialState"
+          animate="animateState"
+          exit="exitState"
+          transition={{
+            duration: 0.75,
+          }}
+          variants={{
+            initialState: {
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              opacity: 0,
+            },
+            animateState: {
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              opacity: 1,
+            },
+            exitState: {
+              clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+            },
+          }}
+        >
           <Component {...pageProps} />
-      </motion.div>
+        </motion.div>
+      </AnimatePresence>
       <SpeedInsights />
-    </AnimatePresence>
+    </>
   );
 }
