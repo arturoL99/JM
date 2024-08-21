@@ -96,10 +96,10 @@ export default function Home(props: { projects: Project[], events: Event[], home
       />
 
       <Main photos={props.homePhotos} />
-      <Contacts active={active} />
-      <Projects active={active} projects={props.projects} />
-      <Events active={active} eventsProps={props.events} />
-      <AboutUs active={active} aboutUs={props.aboutUs} />
+      <Contacts active={active} setActive={setActive} />
+      <Projects active={active} setActive={setActive} projects={props.projects} />
+      <Events active={active} setActive={setActive} eventsProps={props.events} />
+      <AboutUs active={active} setActive={setActive} aboutUs={props.aboutUs} />
 
       <Arrow
         icon={infoIcon}

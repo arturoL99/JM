@@ -86,18 +86,21 @@ export const mapProject = (contentfulProject: any) => {
 export const moveTitle = (open: boolean) => {
   const top = open ? "13%" : "50%";
   const left = open ? "5%" : "50%";
+  const width = open ? "90%" : "50%";
   const translateX = open ? "0%" : "-50%";
   const easin = open ? "easeOutQuart" : "easeInQuart";
   const animation = anime({
     targets: ".projects_title",
     top: top,
     left: left,
+    width: width,
     translateX: translateX,
     translateY: "-50%",
     duration: 1000,
     easing: easin,
   });
   animation.play();
+  
 };
 
 export const moveProjects = (open: boolean) => {

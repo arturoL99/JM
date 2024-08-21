@@ -15,10 +15,18 @@
     position: absolute;
     transform: translate(0%, -50%);
     z-index: 110;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 500ms width ease-in-out;
     
     @media(max-width: 950px){
       width: 70vw;
     }
+  }
+
+  &_logo{
+    cursor: pointer;
   }
 
   &_arrow{

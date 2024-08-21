@@ -9,7 +9,6 @@ import { Event } from "../../types/Event";
 import { handleCalendarIcon, handleEventClick } from "../../utils/CalendarUtils";
 import closeIcon from "../../images/icons8-close-50.webp";
 import calendarIcon from "../../images/icons8-calendar-50.webp";
-import EventDefault from "../Events/EventDefault";
 
 type Props = {
     open: boolean;
@@ -39,7 +38,7 @@ const Calendar: FC<Props> = ({ open, setOpen, events, setActiveEvent }) => {
             <div className={open ? "btn_container" : "btn_container closed"} onClick={() => handleCalendarIcon(open, setOpen, setActiveEvent)}>
                 <Image
                     src={open ? closeIcon : calendarIcon}
-                    alt="arrow icon"
+                    alt="calendar icon"
                     className=""
                     width={30}
                     height={30}

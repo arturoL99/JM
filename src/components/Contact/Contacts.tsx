@@ -1,16 +1,19 @@
-import { FC, useEffect, useState } from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import ContactModal from "./ContactModal";
 import Image from "next/image";
 import instagram from "../../images/icons8-instagram.svg";
 import mail from "../../images/icons8-gmail.svg";
 import Link from "next/link";
 import { animateModal, moveContactsContainer } from "../../utils/ModalUtil";
+import logo from "../../images/P360_Logo_Final_Black.png";
+import { handleLogoClick } from "../../utils/MainUtils";
 
 type Props = {
   active: string;
+  setActive: Dispatch<SetStateAction<string>>;
 };
 
-const Contacts: FC<Props> = ({ active }) => {
+const Contacts: FC<Props> = ({ active, setActive }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -23,6 +26,9 @@ const Contacts: FC<Props> = ({ active }) => {
 
   return (
     <section id="contacts" className={`contacts_container spacer`}>
+      <div className="home_icon_container" onClick={() => handleLogoClick(setActive)}>
+        <Image src={logo} className="home_icon" alt="icon" width={200} height={35} />
+      </div>
       <div className="contacts">
         <h1 className="title">
           Discover the power of{" "}
