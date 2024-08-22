@@ -42,10 +42,9 @@ const Projects: FC<Props> = ({ projects, active, setActive }) => {
         <div className={"projects_title"}>
           
           <h1 className="title">
-            <span className="hideMobile">Evénements</span> <br />
-            faits avec{" "}
+            {/* <span className="hideMobile">NOS {" "}</span> */}
             <span className="animate-charcter" onClick={() => setOpen(!open)}>
-              AMOUR
+              PROJETS
             </span>
           </h1>
           <div className={"projects_logo"} onClick={() => handleLogoClick(setActive)}>

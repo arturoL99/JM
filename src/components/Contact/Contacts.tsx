@@ -60,7 +60,7 @@ const Contacts: FC<Props> = ({ active, setActive }) => {
           />
         </div>
       </div>
-      <ContactModal email="jeaneliasmerino@gmail.com" setOpen={setOpen} />
+      <ContactModal email="redaction.phenotype360@gmail.com" setOpen={setOpen} />
     </section>
   );
 };

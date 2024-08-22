@@ -10,10 +10,10 @@ import contentfulClient from "../src/client/ContentfulClient";
 import { mapHomePhotos, mapProjects } from "../src/utils/ProjectUtils";
 import { Project } from "../src/types/Project";
 import Arrow from "../src/components/Arrow/Arrow";
-import projectIcon from "../src/images/icons8-projects.webp";
-import contactIcon from "../src/images/icons8-contacts.webp";
-import calendarIcon from "../src/images/icons8-calendar-50.webp";
-import infoIcon from "../src/images/info.webp";
+import projectIcon from "../src/images/icons8-collectibles-50-light.png";
+import contactIcon from "../src/images/icons8-contact-50-light.png";
+import calendarIcon from "../src/images/icons8-calendar-50-light.png";
+import infoIcon from "../src/images/icons8-info-50-light.png";
 import Events from "../src/components/Events/Events";
 import { handleArrows } from "../src/utils/AnimeUtils";
 import { mapEvents } from "../src/utils/EventsUtils";
@@ -56,13 +56,14 @@ export default function Home(props: { projects: Project[], events: Event[], home
   const [hideBottom, setHideBottom] = useState(false);
   const [hideLeft, setHideLeft] = useState(false);
   const [hideRight, setHideRight] = useState(false);
+  const [mouseMove, setMouseMove] = useState(false);
 
   useEffect(() => {
     handleArrows(active, setHideTop, setHideBottom, setHideRight, setHideLeft);
     
   }, [active]);
   return (
-    <div className="index">
+    <div className="index" onMouseMove={() => setMouseMove(true)}>
       <style>
         {`html, body {
         overflow: hidden;
@@ -84,6 +85,7 @@ export default function Home(props: { projects: Project[], events: Event[], home
         setActive={setActive}
         arrowClass="arrow_up"
         direction={goUp}
+        mouseMove={mouseMove}
       />
 
       <Arrow
@@ -93,6 +95,7 @@ export default function Home(props: { projects: Project[], events: Event[], home
         setActive={setActive}
         arrowClass="arrow_right"
         direction={goRight}
+        mouseMove={mouseMove}
       />
 
       <Main photos={props.homePhotos} />
@@ -108,6 +111,7 @@ export default function Home(props: { projects: Project[], events: Event[], home
         setActive={setActive}
         arrowClass="arrow_left"
         direction={goLeft}
+        mouseMove={mouseMove}
       />
 
       <Arrow
@@ -117,6 +121,7 @@ export default function Home(props: { projects: Project[], events: Event[], home
         active={active}
         setActive={setActive}
         direction={goDown}
+        mouseMove={mouseMove}
       />
 
       <ToastContainer
