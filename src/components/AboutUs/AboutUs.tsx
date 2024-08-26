@@ -22,7 +22,7 @@ const AboutUs: FC<Props> = ({ aboutUs, active, setActive }) => {
             <div className="home_icon_container" onClick={() => handleLogoClick(setActive)}>
                 <Image src={logo} className="home_icon" alt="icon" width={200} height={35} />
             </div>
-            <div className="aboutUs">
+            <div className="aboutUs my-50">
                 <h2 className="title">{aboutUs[0].fields.title}</h2>
                 <span>{documentToReactComponents(aboutUs[0].fields.whoAreWe)}</span>
             </div>

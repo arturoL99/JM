@@ -134,6 +134,10 @@ a {
   width: 150px;
   height: auto;
 
+  @media(max-width: 950px) {
+    width: 100px;
+  }
+
   &_container {
     position: fixed;
     top: 0;
@@ -144,6 +148,10 @@ a {
     justify-content: flex-start;
     z-index: 100;
     cursor: pointer;
+
+    @media(max-width: 950px) {
+      top: -15px;
+    }
   }
 }
 

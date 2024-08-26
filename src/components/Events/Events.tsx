@@ -9,6 +9,7 @@ import logoWhite from "../../images/P360_Logo_Final_white.png";
 import logoBlack from "../../images/P360_Logo_Final_Black.png";
 import Image from "next/image";
 import { handleLogoClick } from "../../utils/MainUtils";
+import { handleResize } from "../../utils/MobileUtils";
 
 
 type Props = {
@@ -19,20 +20,26 @@ type Props = {
 
 const Events: FC<Props> = ({ active, eventsProps, setActive }) => {
   const [open, setOpen] = useState(true);
-  const [events, setEvents] = useState<Event[]>(sortEventsByStartDate(eventsProps))
+  const [events, setEvents] = useState<Event[]>(sortEventsByStartDate(eventsProps));
   const [activeEvent, setActiveEvent] = useState<Event>();
+  const [mobile, setMobile] = useState<boolean>();
 
   useEffect(() => {
     moveEventsContainer(active);
+    if(mobile) setOpen(false);
   }, [active]);
+
+  useEffect(() => {
+    handleResize(setMobile);
+  }, []);
 
   return (
     <section id="events" className={`events_container`}>
       <div className="home_icon_container" onClick={() => handleLogoClick(setActive)}>
         {
-          open ?
-            <Image src={logoBlack} className="home_icon" alt="icon" width={200} height={35} /> :
-            <Image src={logoWhite} className="home_icon" alt="icon" width={200} height={35} />
+          !open && !mobile ?
+            <Image src={logoWhite} className="home_icon" alt="icon" width={200} height={35} /> :
+            <Image src={logoBlack} className="home_icon" alt="icon" width={200} height={35} />
         }
       </div>
       <div className={open ? "event_container spacer" : "event_container spacer expanded"}>

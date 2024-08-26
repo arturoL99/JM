@@ -8,23 +8,28 @@
     left: -100vw;
     z-index: 99;
     color: $dark;
-    padding: 20px;
+    padding: 10% 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url("../../../src/images/blob-scene-haikei.svg");
 
     @media(max-width: 950px) {
-        align-items: flex-start;
         overflow-y: auto;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 
     .aboutUs {
         width: 50%;
         text-align: justify;
-        
+
         @media(max-width: 950px) {
-            width: 95%;
+            width: 90%;
+        }
+
+        .title{
+            text-align: start;
         }
     }
 }
