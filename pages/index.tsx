@@ -85,7 +85,6 @@ export default function Home(props: { projects: Project[], events: Event[], home
         setActive={setActive}
         arrowClass="arrow_up"
         direction={goUp}
-        mouseMove={mouseMove}
       />
 
       <Arrow
@@ -95,7 +94,6 @@ export default function Home(props: { projects: Project[], events: Event[], home
         setActive={setActive}
         arrowClass="arrow_right"
         direction={goRight}
-        mouseMove={mouseMove}
       />
 
       <Main photos={props.homePhotos} />
@@ -111,7 +109,6 @@ export default function Home(props: { projects: Project[], events: Event[], home
         setActive={setActive}
         arrowClass="arrow_left"
         direction={goLeft}
-        mouseMove={mouseMove}
       />
 
       <Arrow
@@ -121,7 +118,6 @@ export default function Home(props: { projects: Project[], events: Event[], home
         active={active}
         setActive={setActive}
         direction={goDown}
-        mouseMove={mouseMove}
       />
 
       <ToastContainer

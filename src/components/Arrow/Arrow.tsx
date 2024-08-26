@@ -13,7 +13,6 @@ type Props = {
   direction: (
     active:string, setActive:Dispatch<SetStateAction<string>>
   ) => void;
-  mouseMove:boolean;
 };
 
 //posizione icon determinata da icon_container --> aggiungere modo di differenzziare left right (usare prop direction?)--> top 0 piu o meno da provare transform -50%...
@@ -24,13 +23,14 @@ const Arrow: FC<Props> = ({
   arrowClass,
   direction,
   active,
-  setActive,
-  mouseMove
+  setActive
 }) => {
   
   useEffect(() => {
-    hoverArrow(arrowClass, mouseMove);
-  }, [mouseMove]);
+    setTimeout(() => {
+      hoverArrow(arrowClass, true);
+    }, 2000)
+  }, []);
 
   return (
     <div
