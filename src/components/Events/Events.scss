@@ -24,7 +24,7 @@
     width: 70vw;
   }
 
-  p{
+  p {
     text-align: justify;
   }
 
@@ -44,7 +44,52 @@
     }
   }
 
-  .titleContainer{
+  &_content_1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_content_2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &_photo_container {
+    &_vertical {
+      width: 35%;
+      height: auto;
+      display: flex;
+      align-items: center;
+    }
+    &_horizontal {
+      width: 48%;
+      height: auto;
+    }
+  }
+
+  &_map{
+      width: 100%;
+      height: 100%;
+    &_container{
+      width: 48%;
+      height: 100%;
+    }
+  }
+
+  &_photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .titleContainer {
     display: flex;
     align-items: center;
     justify-content: center;
