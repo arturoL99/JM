@@ -3,8 +3,7 @@ import { FC } from "react";
 import { Parallax } from "react-scroll-parallax";
 import { Project } from "../../types/Project";
 import Image from "next/image";
-import scroll from "../../images/icons8-scroll.webp";
-import circle from "../../images/P360_Logo_Circle Low_Black.png";
+import scroll from "../../images/arrow.gif";
 
 type Props = {
   project: Project;
@@ -23,8 +22,8 @@ const Title: FC<Props> = ({ project }) => {
         <Image
           src={scroll}
           alt="scroll icon"
-          width={50}
-          height={50}
+          width={40}
+          height={40}
           loading="lazy"
         />
       </a>
