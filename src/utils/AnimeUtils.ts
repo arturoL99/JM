@@ -5,7 +5,7 @@ export const hoverArrow = (arrowClass: string, hover: boolean) => {
   const opacity = hover ? [0, 1] : [1, 0];
   const scaleIcon = hover ? [0.5, 1] : [1, 0.5];
   const scaleArrow = hover ? [1, 1.3] : [1.3, 1];
-  const position = hover ? [-50, 40] : [40, -50];
+  const position = hover ? [-50, 10] : [10, -50];
   const positionY = hover ? [-5, -5] : [-5, -5];
   switch (arrowClass) {
     case "arrow_up":

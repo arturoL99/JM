@@ -26,6 +26,7 @@
     top: 3px;
     cursor: pointer;
     z-index: 100;
+    display: none;
   }
 
   &down {
@@ -33,6 +34,7 @@
     bottom: 3px;
     cursor: pointer;
     z-index: 100;
+    display: none;
   }
 
   &right {
@@ -41,6 +43,7 @@
     right: 3px;
     cursor: pointer;
     z-index: 100;
+    display: none;
   }
 
   &left {
@@ -49,6 +52,7 @@
     left: 3px;
     cursor: pointer;
     z-index: 100;
+    display: none;
   }
   
 }

@@ -21,7 +21,8 @@
 
     .aboutUs {
         width: 50%;
-
+        text-align: justify;
+        
         @media(max-width: 950px) {
             width: 95%;
         }
