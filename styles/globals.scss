@@ -95,24 +95,26 @@ a {
   border-radius: 5px;
 }
 
-.btn_dark {
-  display: inline-block;
-  color: $light;
-  padding: 16px 24px;
-  background: $black;
-  cursor: pointer;
-  font-size: .75rem;
-  font-weight: 700;
+a.btn_dark{
+  background: linear-gradient(to right,#001220 ,#0c090a);
+  background-color: #001220;
+  color: #f5f5dc;
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
   text-decoration: none;
-  text-transform: uppercase;
-  outline: none;
+  padding: 14px 15px;
+  border: 0px solid #000;
   border-radius: 5px;
-  transition: 300ms ease-in-out;
-}
-
-.btn_dark:hover {
-  transform: scale(0.97);
-}
+  display: inline-block;
+ }
+ a.btn_dark:hover{
+  background: linear-gradient(to right,#515256 ,#515151);
+  background-color: #515256;
+ }
+ a.btn_dark:active{
+  transform: scale(0.95);
+ }
 
 .my-50 {
   margin: 50px 0;

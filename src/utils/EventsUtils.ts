@@ -18,6 +18,17 @@ export const mapEvents = (contentfulEvents: any[]) => {
       const event: Event = {
         title: contentfulEvent.fields.title,
         paragraphe1: contentfulEvent.fields.paragraphe1 || null,
+        verticalImg: {
+          url: contentfulEvent.fields.imageVerticale.fields.file.url,
+          height: contentfulEvent.fields.imageVerticale.fields.file.details.image.height,
+          width: contentfulEvent.fields.imageVerticale.fields.file.details.image.width
+        },
+        horizontalImg: {
+          url: contentfulEvent.fields.imageHorizontale.fields.file.url,
+          height: contentfulEvent.fields.imageHorizontale.fields.file.details.image.height,
+          width: contentfulEvent.fields.imageHorizontale.fields.file.details.image.width
+        },
+        map: contentfulEvent.fields.googleMaps,
         start: contentfulEvent.fields.startDate,
         end: contentfulEvent.fields.endDate,
         fullAccess: contentfulEvent.fields.fullAccess,
@@ -39,6 +50,17 @@ export const mapEvents = (contentfulEvents: any[]) => {
       paragraphe1: "contentfulEvent.fields.paragraphe1 || null",
       start: "contentfulEvent.fields.startDate",
       end: "contentfulEvent.fields.endDate",
+      verticalImg: {
+        url: "",
+        height:0,
+        width:0
+      },
+      horizontalImg: {
+        url: "",
+        height:0,
+        width:0
+      },
+      map:"",
       fullAccess: cta,
       atelier: cta,
       concert: cta,
