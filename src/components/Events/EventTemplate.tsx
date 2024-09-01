@@ -20,6 +20,16 @@ const EventTemplate: FC<Props> = ({ activeEvent }) => {
                         <p>{formatDate(activeEvent.start)}</p>
                     </span>
                     <span className="event_description">{documentToReactComponents(activeEvent.paragraphe1)}</span>
+                    <div className="tickets">
+                        <h3>Tickets</h3>
+                        <div className="cta">
+                            <a href={activeEvent.fullAccess.url} className="btn_dark">{activeEvent.fullAccess.name}</a>
+                            {activeEvent.atelier ? <a href={activeEvent.atelier.url} className="btn_dark">{activeEvent.atelier.name}</a> : <></>}
+                            {activeEvent.concert ? <a href={activeEvent.concert.url} className="btn_dark">{activeEvent.concert.name}</a> : <></>}
+                            {activeEvent.conference ? <a href={activeEvent.conference.url} className="btn_dark">{activeEvent.conference.name}</a> : <></>}
+                            {activeEvent.film ? <a href={activeEvent.film.url} className="btn_dark">{activeEvent.film.name}</a> : <></>}
+                        </div>
+                    </div>
                 </div>
                 <div className="event_photo_container_vertical">
                     <Image
@@ -32,7 +42,7 @@ const EventTemplate: FC<Props> = ({ activeEvent }) => {
                     />
                 </div>
             </div>
-            <div className="event_content_2 my-50">
+            <div className="event_content_2 py-50">
                 <div className="event_photo_container_horizontal">
                     <Image
                         src={`https:${activeEvent.horizontalImg.url}`}
@@ -45,16 +55,6 @@ const EventTemplate: FC<Props> = ({ activeEvent }) => {
                 </div>
                 <div className="event_map_container">
                     <iframe src={activeEvent.map} width="600" height="450" loading="lazy" className="event_map" />
-                </div>
-            </div>
-            <div className="tickets">
-                <h3>Tickets</h3>
-                <div className="cta mb-50">
-                    <a href={activeEvent.fullAccess.url} className="btn_dark">{activeEvent.fullAccess.name}</a>
-                    {activeEvent.atelier ? <a href={activeEvent.atelier.url} className="btn_dark">{activeEvent.atelier.name}</a> : <></>}
-                    {activeEvent.concert ? <a href={activeEvent.concert.url} className="btn_dark">{activeEvent.concert.name}</a> : <></>}
-                    {activeEvent.conference ? <a href={activeEvent.conference.url} className="btn_dark">{activeEvent.conference.name}</a> : <></>}
-                    {activeEvent.film ? <a href={activeEvent.film.url} className="btn_dark">{activeEvent.film.name}</a> : <></>}
                 </div>
             </div>
         </div>

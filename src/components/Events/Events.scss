@@ -30,7 +30,7 @@
 
   &_container {
     background-color: $light;
-    padding: 10% 5%;
+    padding: 1% 5%;
     width: 70%;
     transition: all 500ms ease-in-out;
     display: flex;
@@ -52,6 +52,7 @@
   &_content_1 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     @media(max-width: 950px) {
       flex-direction: column;
@@ -148,6 +149,10 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+  }
+
+  h3{
+    font-size: 2rem;
   }
 }
 

@@ -34,7 +34,7 @@ a {
 }
 
 .title {
-  font-size: 60px;
+  font-size: 3.8rem;
   font-weight: 600;
   margin: 0;
 
@@ -96,21 +96,23 @@ a {
 }
 
 a.btn_dark{
-  background: linear-gradient(to right,#001220 ,#0c090a);
-  background-color: #001220;
-  color: #f5f5dc;
+  // background: linear-gradient(to right,#001220 ,#0c090a);
+  // background-color: $light;
+  color: $black;
   font-size: 18px;
   font-weight: 800;
   font-style: normal;
   text-decoration: none;
   padding: 14px 15px;
-  border: 0px solid #000;
+  border: 2px solid #000;
   border-radius: 5px;
   display: inline-block;
+  transition: 300ms ease-in-out;
  }
  a.btn_dark:hover{
-  background: linear-gradient(to right,#515256 ,#515151);
-  background-color: #515256;
+  color: $light;
+  background: $black;
+  background-color: $black;
  }
  a.btn_dark:active{
   transform: scale(0.95);
@@ -122,6 +124,10 @@ a.btn_dark{
 
 .mb-50 {
   margin-bottom: 50px;
+}
+
+.py-50 {
+  padding: 50px 0;
 }
 
 .spacer {
