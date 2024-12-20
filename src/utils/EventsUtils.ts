@@ -6,7 +6,7 @@ export const moveEventsContainer = (active: string) => {
   anime({
     targets: ".events_container",
     translateX: right,
-    duration: 1000,
+    duration: 700,
     easing: "linear",
   });
 };
@@ -31,7 +31,7 @@ export const mapEvents = (contentfulEvents: any[]) => {
         map: contentfulEvent.fields.googleMaps,
         start: contentfulEvent.fields.startDate,
         end: contentfulEvent.fields.endDate,
-        fullAccess: contentfulEvent.fields.fullAccess,
+        fullAccess: contentfulEvent.fields.fullAccess || null,
         atelier: contentfulEvent.fields.atelier || null,
         concert: contentfulEvent.fields.concert || null,
         conference: contentfulEvent.fields.conference || null,

@@ -133,7 +133,7 @@ export const moveProjectsContainer = (active: string) => {
   anime({
     targets: ".projects_container",
     translateY: top,
-    duration: 1000,
+    duration: 700,
     easing: "linear",
   });
 };

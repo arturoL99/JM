@@ -8,7 +8,7 @@ import {
   moveTitle,
 } from "../../utils/ProjectUtils";
 import ProjectsContainer from "./ProjectsContainer";
-import logo from "../../images/P360_Logo_Final_Black.png";
+import logo from "../../images/P360_Logo.png";
 import { handleLogoClick } from "../../utils/MainUtils";
 
 type Props = {
@@ -44,7 +44,7 @@ const Projects: FC<Props> = ({ projects, active, setActive }) => {
           <h1 className="title">
             {/* <span className="hideMobile">NOS {" "}</span> */}
             <span className="animate-charcter" onClick={() => setOpen(!open)}>
-              PROJETS
+              ACTUALITÉS
             </span>
           </h1>
           <div className={"projects_logo"} onClick={() => handleLogoClick(setActive)}>

@@ -69,6 +69,10 @@
   border: 3px solid $dark;
 }
 
+.imgCard:hover{
+  cursor: url('../../images/icons8-eye-50.png'), auto;
+}
+
 ::-webkit-scrollbar{
     height: 4px;
     width: 4px;

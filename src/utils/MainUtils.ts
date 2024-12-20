@@ -5,7 +5,7 @@ export const moveInfo = (open: boolean) => {
   const aniTitle = anime({
     targets: ".info_title",
     opacity: open ? 0 : 1,
-    duration: 1000,
+    duration: 700,
     easing: "linear",
   });
   aniTitle.play();

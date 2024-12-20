@@ -19,7 +19,7 @@ export const moveContactsContainer = (active:string) => {
   anime({
     targets: ".contacts_container",
     translateY: top,
-    duration: 1000,
+    duration: 700,
     easing: "linear",
   });
 };

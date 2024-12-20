@@ -12,7 +12,7 @@ const EventDefault: FC<Props> = ({ events }) => {
     return (
         <div className="event default">
             <div>
-                <h2 className="title">Next Up</h2>
+                <h2 className="title">À venir</h2>
                 <p>Nos prochains évenements seront:</p>
                 <ul>
                     {

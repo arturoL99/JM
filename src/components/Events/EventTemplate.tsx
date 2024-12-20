@@ -23,7 +23,7 @@ const EventTemplate: FC<Props> = ({ activeEvent }) => {
                     <div className="tickets">
                         <h3>Tickets</h3>
                         <div className="cta">
-                            <a href={activeEvent.fullAccess.url} className="btn_dark">{activeEvent.fullAccess.name}</a>
+                            {activeEvent.fullAccess ? <a href={activeEvent.fullAccess.url} className="btn_dark">{activeEvent.fullAccess.name}</a> : <></>}
                             {activeEvent.atelier ? <a href={activeEvent.atelier.url} className="btn_dark">{activeEvent.atelier.name}</a> : <></>}
                             {activeEvent.concert ? <a href={activeEvent.concert.url} className="btn_dark">{activeEvent.concert.name}</a> : <></>}
                             {activeEvent.conference ? <a href={activeEvent.conference.url} className="btn_dark">{activeEvent.conference.name}</a> : <></>}

@@ -1,13 +1,22 @@
+@import url("https://p.typekit.net/p.css?s=1&k=hzl6iss&ht=tk&f=55776.55780.55786&a=69443118&app=typekit&e=css");
+
 @font-face {
-    font-family: "Mersad";
-    src: url("../src/font/Mersad/Mersad\ Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-      font-family: "Mersad";
-      src: url("../src/font/Mersad/Mersad\ ExtraBold.ttf");
-      font-weight: bold;
-      font-style: normal;
-    }
+font-family:"new-science";
+src:url("https://use.typekit.net/af/28ce7f/00000000000000007753f71f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/28ce7f/00000000000000007753f71f/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/28ce7f/00000000000000007753f71f/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:300;font-stretch:normal;
+}
+
+@font-face {
+font-family:"new-science";
+src:url("https://use.typekit.net/af/2fcf6f/00000000000000007753f728/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/2fcf6f/00000000000000007753f728/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/2fcf6f/00000000000000007753f728/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:500;font-stretch:normal;
+}
+
+@font-face {
+font-family:"new-science-extended";
+src:url("https://use.typekit.net/af/b54d16/00000000000000007753f71d/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/b54d16/00000000000000007753f71d/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/b54d16/00000000000000007753f71d/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+.tk-new-science { font-family: "new-science",sans-serif; }
+.tk-new-science-extended { font-family: "new-science-extended",sans-serif; }

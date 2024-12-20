@@ -5,7 +5,7 @@ import instagram from "../../images/icons8-instagram.svg";
 import mail from "../../images/icons8-gmail.svg";
 import Link from "next/link";
 import { animateModal, moveContactsContainer } from "../../utils/ModalUtil";
-import logo from "../../images/P360_Logo_Final_Black.png";
+import logo from "../../images/P360_Logo.png";
 import { handleLogoClick } from "../../utils/MainUtils";
 
 type Props = {

@@ -6,7 +6,7 @@ export const moveAboutUsContainer = (active: string) => {
     anime({
       targets: ".aboutUs_container",
       translateX: left,
-      duration: 1000,
+      duration: 700,
       easing: "linear",
     });
   };
