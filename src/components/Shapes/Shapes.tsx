@@ -36,7 +36,7 @@ const Shapes: FC<Props> = ({ photos }) => {
     >
       <div className="shape"
         style={{
-          backgroundImage: `url(${photos[0].url})`
+          backgroundImage: `url(${photos[3].url})`
         }}></div>
       <div className="shape"
         style={{
@@ -44,11 +44,11 @@ const Shapes: FC<Props> = ({ photos }) => {
         }}></div>
       <div className="shape"
         style={{
-          backgroundImage: `url(${photos[2].url})`
+          backgroundImage: `url(${photos[0].url})`
         }}></div>
       <div className="shape"
         style={{
-          backgroundImage: `url(${photos[3].url})`
+          backgroundImage: `url(${photos[2].url})`
         }}></div>
       <div className="shape"
         style={{

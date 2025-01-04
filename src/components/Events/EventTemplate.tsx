@@ -12,16 +12,17 @@ const EventTemplate: FC<Props> = ({ activeEvent }) => {
     if (!activeEvent) return <></>
     return (
         <div className="event">
+            <span className="titleContainer my_10">
+                <h2 className="title">{activeEvent.title}</h2>
+                -
+                <p><b>{formatDate(activeEvent.start)}</b></p>
+            </span>
             <div className="event_content_1">
                 <div className="event_text">
-                    <span className="titleContainer">
-                        <h2 className="title">{activeEvent.title}</h2>
-                        -
-                        <p>{formatDate(activeEvent.start)}</p>
-                    </span>
+
                     <span className="event_description">{documentToReactComponents(activeEvent.paragraphe1)}</span>
                     <div className="tickets">
-                        <h3>Tickets</h3>
+                        {/* <h3>Tickets</h3> */}
                         <div className="cta">
                             {activeEvent.fullAccess ? <a href={activeEvent.fullAccess.url} className="btn_dark">{activeEvent.fullAccess.name}</a> : <></>}
                             {activeEvent.atelier ? <a href={activeEvent.atelier.url} className="btn_dark">{activeEvent.atelier.name}</a> : <></>}

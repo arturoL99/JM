@@ -122,10 +122,18 @@
   }
 
   .titleContainer {
+    // width: 100%;
+    // white-space: nowrap;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
+    margin: 10px 0;
+
+    h2{
+      font-size: 4rem;
+    }
 
     @media(max-width: 950px) {
       gap: 0;
@@ -146,6 +154,7 @@
   width: 100%;
 
   .cta {
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
