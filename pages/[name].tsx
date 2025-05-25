@@ -7,8 +7,8 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import Title from "../src/components/Title/Title";
 import { useEffect, useState } from "react";
 import { handleResize } from "../src/utils/MobileUtils";
-import logoBlack from "../src/images/P360_Logo.png";
-import logoWhite from "../src/images/P360_Logo_Bianco.png";
+import logoBlack from "../src/images/P360_Logo_2.png";
+import logoWhite from "../src/images/P360_Logo_2_Bianco.png";
 import { StaticImageData } from "next/image";
 
 export async function getStaticPaths() {

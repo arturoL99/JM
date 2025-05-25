@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import ContactForm from "./ContactForm";
 import Image from "next/image";
 import mailIcon from "../../images/icons8-gmail.svg";
+import x from "../../images/icons8-close-white.svg";
 
 type Props = {
   setOpen: Dispatch<SetStateAction<boolean>>;
@@ -50,6 +51,9 @@ const ContactModal: FC<Props> = ({ setOpen, email }) => {
 
   return (
     <section className={"modal"}>
+      <div className="modal_info">
+          <Image src={x} alt="" onClick={() => setOpen(false)}/>
+      </div>
       <div className="modal_title">
         <a href={`mailto:${email}`} className="modal_email">
           <span>{email}</span>
@@ -70,11 +74,6 @@ const ContactModal: FC<Props> = ({ setOpen, email }) => {
 
       <div className="form_container">
         <ContactForm onSubmit={sendEmail} />
-      </div>
-      <div className="modal_info">
-        <small>
-          to exit click <button onClick={() => setOpen(false)}>HERE</button>
-        </small>
       </div>
     </section>
   );

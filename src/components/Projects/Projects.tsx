@@ -8,7 +8,7 @@ import {
   moveTitle,
 } from "../../utils/ProjectUtils";
 import ProjectsContainer from "./ProjectsContainer";
-import logo from "../../images/P360_Logo.png";
+import logo from "../../images/P360_Logo_2.png";
 import { handleLogoClick } from "../../utils/MainUtils";
 
 type Props = {

@@ -17,14 +17,14 @@ const ContactForm: FC<Props> = ({ onSubmit }) => {
       <div className="field">
         <input type="email" name="mail" placeholder="Email" required />
       </div>
-    </div>
-    <div className="form_column">
-      <div className="field">
-        <textarea name="message" />
-      </div>
       <button className="form_btn">
         <span>Send Message</span>
       </button>
+    </div>
+    <div className="form_column">
+      <div className="field textarea">
+        <textarea name="message" />
+      </div>
     </div>
   </form>
   );

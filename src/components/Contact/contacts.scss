@@ -3,7 +3,8 @@
 .contacts {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
 
   @media(max-width: 950px){
     padding: 0 10px;
@@ -33,11 +34,11 @@
 .icon {
   cursor: pointer;
   transition: 200ms ease-in-out;
+  width: 45px;
+  height: auto;
   &_container {
     display: flex;
-    flex-direction: column;
-    padding-bottom: 2%;
-    padding-left: 10px;
+    gap: 10px;
   }
 }
 

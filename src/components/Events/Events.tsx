@@ -5,8 +5,8 @@ import { Event } from "../../types/Event";
 import EventTemplate from "./EventTemplate";
 import EventDefault from "./EventDefault";
 import { sortEventsByStartDate } from "../../utils/CalendarUtils";
-import logoWhite from "../../images/P360_Logo_Bianco.png";
-import logoBlack from "../../images/P360_Logo.png";
+import logoWhite from "../../images/P360_Logo_2_Bianco.png";
+import logoBlack from "../../images/P360_Logo_2.png";
 import Image from "next/image";
 import { handleLogoClick } from "../../utils/MainUtils";
 import { handleResize } from "../../utils/MobileUtils";
@@ -26,6 +26,7 @@ const Events: FC<Props> = ({ active, eventsProps, setActive }) => {
 
   useEffect(() => {
     moveEventsContainer(active);
+    setActiveEvent(undefined);
     if(mobile) setOpen(false);
   }, [active]);
 

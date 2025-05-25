@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import { moveAboutUsContainer } from "../../utils/AboutUsUtils";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import logo from "../../images/P360_Logo.png";
+import logo from "../../images/P360_Logo_2.png";
 import Image from "next/image";
 import { handleLogoClick } from "../../utils/MainUtils";
 

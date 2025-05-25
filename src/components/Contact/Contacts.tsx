@@ -5,7 +5,7 @@ import instagram from "../../images/icons8-instagram.svg";
 import mail from "../../images/icons8-gmail.svg";
 import Link from "next/link";
 import { animateModal, moveContactsContainer } from "../../utils/ModalUtil";
-import logo from "../../images/P360_Logo.png";
+import logo from "../../images/P360_Logo_2.png";
 import { handleLogoClick } from "../../utils/MainUtils";
 
 type Props = {
@@ -38,7 +38,7 @@ const Contacts: FC<Props> = ({ active, setActive }) => {
         </h1>
 
         <div className="icon_container">
-          <Link href={"https://www.instagram.com/j.elias.m/"} target="_blank">
+          <Link href={"https://www.instagram.com/p360.club/"} target="_blank">
             <Image
               src={instagram}
               alt="instagram"

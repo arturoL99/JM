@@ -68,28 +68,18 @@
   }
 
   &_info {
+    position: absolute;
+    top: 35px;
     width: 90%;
-    border-top: 1px solid grey;
     color: $light;
     display: flex;
     justify-content: flex-end;
-    padding-top: 10px;
-    margin: 10px 0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 
-
-    button{
-      font-size: 12px;
-      color: $red;
-      font-weight: 600;
-      transition: 500ms transform;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-    
-    button:hover{
-      cursor: pointer;
-      transform: scale(1.2);
+    img{
+      width: 40px;
+      height: auto;
     }
   }
 
@@ -104,6 +94,7 @@
 
   .form_container {
     width: 100%;
+    height: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
